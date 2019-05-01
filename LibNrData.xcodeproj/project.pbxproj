@@ -6,8 +6,57 @@
 	objectVersion = 50;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		971487A3227A27BE00570548 /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487A1227A27BE00570548 /* Database.cpp */; };
+		971487A4227A27BE00570548 /* Database.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487A2227A27BE00570548 /* Database.h */; };
+		971487A7227A27E200570548 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487A5227A27E200570548 /* Model.cpp */; };
+		971487A8227A27E200570548 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487A6227A27E200570548 /* Model.h */; };
+		971487AC227A285200570548 /* ConnectorBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AA227A285200570548 /* ConnectorBase.cpp */; };
+		971487AD227A285200570548 /* ConnectorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AB227A285200570548 /* ConnectorBase.h */; };
+		971487B0227A286700570548 /* Mysql.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AE227A286700570548 /* Mysql.cpp */; };
+		971487B1227A286700570548 /* Mysql.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AF227A286700570548 /* Mysql.h */; };
+		971487B4227A2C0F00570548 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 971487B3227A2C0F00570548 /* libmysqlclient.a */; };
+		971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487B5227A2CAD00570548 /* ResultSet.cpp */; };
+		971487B8227A2CAD00570548 /* ResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487B6227A2CAD00570548 /* ResultSet.h */; };
+		971487BC227A2D1600570548 /* Result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487BA227A2D1600570548 /* Result.cpp */; };
+		971487BD227A2D1600570548 /* Result.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487BB227A2D1600570548 /* Result.h */; };
+		971487C1227A2D9900570548 /* GeneratorBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487BF227A2D9900570548 /* GeneratorBase.cpp */; };
+		971487C2227A2D9900570548 /* GeneratorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487C0227A2D9900570548 /* GeneratorBase.h */; };
+		971487C5227A321100570548 /* MysqlGenerator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487C3227A321100570548 /* MysqlGenerator.cpp */; };
+		971487C6227A321100570548 /* MysqlGenerator.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487C4227A321100570548 /* MysqlGenerator.h */; };
+		971487C9227A38E800570548 /* Clause.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487C7227A38E800570548 /* Clause.cpp */; };
+		971487CA227A38E800570548 /* Clause.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487C8227A38E800570548 /* Clause.h */; };
+		971487CE227A434700570548 /* ClauseValue.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487CC227A434700570548 /* ClauseValue.cpp */; };
+		971487CF227A434700570548 /* ClauseValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487CD227A434700570548 /* ClauseValue.h */; };
+		971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487D0227A438A00570548 /* ClauseGroup.cpp */; };
+		971487D3227A438A00570548 /* ClauseGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487D1227A438A00570548 /* ClauseGroup.h */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		97148799227A267E00570548 /* libLibNrData.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libLibNrData.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		97148799227A267E00570548 /* libnrdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libnrdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		971487A1227A27BE00570548 /* Database.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Database.cpp; sourceTree = "<group>"; };
+		971487A2227A27BE00570548 /* Database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
+		971487A5227A27E200570548 /* Model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
+		971487A6227A27E200570548 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		971487AA227A285200570548 /* ConnectorBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectorBase.cpp; sourceTree = "<group>"; };
+		971487AB227A285200570548 /* ConnectorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectorBase.h; sourceTree = "<group>"; };
+		971487AE227A286700570548 /* Mysql.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mysql.cpp; sourceTree = "<group>"; };
+		971487AF227A286700570548 /* Mysql.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mysql.h; sourceTree = "<group>"; };
+		971487B3227A2C0F00570548 /* libmysqlclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmysqlclient.a; path = "../../../../../usr/local/Cellar/mysql-connector-c/6.1.11/lib/libmysqlclient.a"; sourceTree = "<group>"; };
+		971487B5227A2CAD00570548 /* ResultSet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResultSet.cpp; sourceTree = "<group>"; };
+		971487B6227A2CAD00570548 /* ResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultSet.h; sourceTree = "<group>"; };
+		971487BA227A2D1600570548 /* Result.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Result.cpp; sourceTree = "<group>"; };
+		971487BB227A2D1600570548 /* Result.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
+		971487BF227A2D9900570548 /* GeneratorBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GeneratorBase.cpp; sourceTree = "<group>"; };
+		971487C0227A2D9900570548 /* GeneratorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratorBase.h; sourceTree = "<group>"; };
+		971487C3227A321100570548 /* MysqlGenerator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MysqlGenerator.cpp; sourceTree = "<group>"; };
+		971487C4227A321100570548 /* MysqlGenerator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MysqlGenerator.h; sourceTree = "<group>"; };
+		971487C7227A38E800570548 /* Clause.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Clause.cpp; sourceTree = "<group>"; };
+		971487C8227A38E800570548 /* Clause.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clause.h; sourceTree = "<group>"; };
+		971487CC227A434700570548 /* ClauseValue.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClauseValue.cpp; sourceTree = "<group>"; };
+		971487CD227A434700570548 /* ClauseValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClauseValue.h; sourceTree = "<group>"; };
+		971487D0227A438A00570548 /* ClauseGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClauseGroup.cpp; sourceTree = "<group>"; };
+		971487D1227A438A00570548 /* ClauseGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClauseGroup.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				971487B4227A2C0F00570548 /* libmysqlclient.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -24,16 +74,87 @@
 		97148790227A267E00570548 = {
 			isa = PBXGroup;
 			children = (
+				971487A0227A268700570548 /* libnrdata */,
 				9714879A227A267E00570548 /* Products */,
+				971487B2227A2C0F00570548 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		9714879A227A267E00570548 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97148799227A267E00570548 /* libLibNrData.a */,
+				97148799227A267E00570548 /* libnrdata.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		971487A0227A268700570548 /* libnrdata */ = {
+			isa = PBXGroup;
+			children = (
+				971487BE227A2D8D00570548 /* sql */,
+				971487B9227A2CFD00570548 /* result */,
+				971487A9227A283800570548 /* connectors */,
+				971487A2227A27BE00570548 /* Database.h */,
+				971487A1227A27BE00570548 /* Database.cpp */,
+				971487A6227A27E200570548 /* Model.h */,
+				971487A5227A27E200570548 /* Model.cpp */,
+			);
+			path = libnrdata;
+			sourceTree = "<group>";
+		};
+		971487A9227A283800570548 /* connectors */ = {
+			isa = PBXGroup;
+			children = (
+				971487AB227A285200570548 /* ConnectorBase.h */,
+				971487AA227A285200570548 /* ConnectorBase.cpp */,
+				971487AF227A286700570548 /* Mysql.h */,
+				971487AE227A286700570548 /* Mysql.cpp */,
+			);
+			path = connectors;
+			sourceTree = "<group>";
+		};
+		971487B2227A2C0F00570548 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				971487B3227A2C0F00570548 /* libmysqlclient.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		971487B9227A2CFD00570548 /* result */ = {
+			isa = PBXGroup;
+			children = (
+				971487B6227A2CAD00570548 /* ResultSet.h */,
+				971487B5227A2CAD00570548 /* ResultSet.cpp */,
+				971487BB227A2D1600570548 /* Result.h */,
+				971487BA227A2D1600570548 /* Result.cpp */,
+			);
+			path = result;
+			sourceTree = "<group>";
+		};
+		971487BE227A2D8D00570548 /* sql */ = {
+			isa = PBXGroup;
+			children = (
+				971487CB227A38F000570548 /* sections */,
+				971487C0227A2D9900570548 /* GeneratorBase.h */,
+				971487BF227A2D9900570548 /* GeneratorBase.cpp */,
+				971487C4227A321100570548 /* MysqlGenerator.h */,
+				971487C3227A321100570548 /* MysqlGenerator.cpp */,
+			);
+			path = sql;
+			sourceTree = "<group>";
+		};
+		971487CB227A38F000570548 /* sections */ = {
+			isa = PBXGroup;
+			children = (
+				971487C8227A38E800570548 /* Clause.h */,
+				971487C7227A38E800570548 /* Clause.cpp */,
+				971487CD227A434700570548 /* ClauseValue.h */,
+				971487CC227A434700570548 /* ClauseValue.cpp */,
+				971487D1227A438A00570548 /* ClauseGroup.h */,
+				971487D0227A438A00570548 /* ClauseGroup.cpp */,
+			);
+			path = sections;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -43,6 +164,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				971487A8227A27E200570548 /* Model.h in Headers */,
+				971487C2227A2D9900570548 /* GeneratorBase.h in Headers */,
+				971487B8227A2CAD00570548 /* ResultSet.h in Headers */,
+				971487CA227A38E800570548 /* Clause.h in Headers */,
+				971487B1227A286700570548 /* Mysql.h in Headers */,
+				971487BD227A2D1600570548 /* Result.h in Headers */,
+				971487C6227A321100570548 /* MysqlGenerator.h in Headers */,
+				971487CF227A434700570548 /* ClauseValue.h in Headers */,
+				971487D3227A438A00570548 /* ClauseGroup.h in Headers */,
+				971487A4227A27BE00570548 /* Database.h in Headers */,
+				971487AD227A285200570548 /* ConnectorBase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,7 +195,7 @@
 			);
 			name = LibNrData;
 			productName = LibNrData;
-			productReference = 97148799227A267E00570548 /* libLibNrData.a */;
+			productReference = 97148799227A267E00570548 /* libnrdata.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -102,6 +234,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				971487C5227A321100570548 /* MysqlGenerator.cpp in Sources */,
+				971487B0227A286700570548 /* Mysql.cpp in Sources */,
+				971487CE227A434700570548 /* ClauseValue.cpp in Sources */,
+				971487C9227A38E800570548 /* Clause.cpp in Sources */,
+				971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */,
+				971487BC227A2D1600570548 /* Result.cpp in Sources */,
+				971487A3227A27BE00570548 /* Database.cpp in Sources */,
+				971487C1227A2D9900570548 /* GeneratorBase.cpp in Sources */,
+				971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */,
+				971487A7227A27E200570548 /* Model.cpp in Sources */,
+				971487AC227A285200570548 /* ConnectorBase.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +368,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",
+				);
+				PRODUCT_NAME = nrdata;
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -236,7 +384,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				EXECUTABLE_PREFIX = lib;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",
+				);
+				PRODUCT_NAME = nrdata;
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
