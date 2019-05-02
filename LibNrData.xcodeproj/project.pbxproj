@@ -30,6 +30,14 @@
 		971487CF227A434700570548 /* ClauseValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487CD227A434700570548 /* ClauseValue.h */; };
 		971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487D0227A438A00570548 /* ClauseGroup.cpp */; };
 		971487D3227A438A00570548 /* ClauseGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487D1227A438A00570548 /* ClauseGroup.h */; };
+		971487D6227B6E5100570548 /* Fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487D4227B6E5100570548 /* Fields.cpp */; };
+		971487D7227B6E5100570548 /* Fields.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487D5227B6E5100570548 /* Fields.h */; };
+		971487DA227B7A5800570548 /* Join.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487D8227B7A5800570548 /* Join.cpp */; };
+		971487DB227B7A5800570548 /* Join.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487D9227B7A5800570548 /* Join.h */; };
+		971487DE227B7A8900570548 /* Order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487DC227B7A8900570548 /* Order.cpp */; };
+		971487DF227B7A8900570548 /* Order.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487DD227B7A8900570548 /* Order.h */; };
+		971487E2227B7A9A00570548 /* Group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487E0227B7A9A00570548 /* Group.cpp */; };
+		971487E3227B7A9A00570548 /* Group.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487E1227B7A9A00570548 /* Group.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +65,14 @@
 		971487CD227A434700570548 /* ClauseValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClauseValue.h; sourceTree = "<group>"; };
 		971487D0227A438A00570548 /* ClauseGroup.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ClauseGroup.cpp; sourceTree = "<group>"; };
 		971487D1227A438A00570548 /* ClauseGroup.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClauseGroup.h; sourceTree = "<group>"; };
+		971487D4227B6E5100570548 /* Fields.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Fields.cpp; sourceTree = "<group>"; };
+		971487D5227B6E5100570548 /* Fields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
+		971487D8227B7A5800570548 /* Join.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Join.cpp; sourceTree = "<group>"; };
+		971487D9227B7A5800570548 /* Join.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Join.h; sourceTree = "<group>"; };
+		971487DC227B7A8900570548 /* Order.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Order.cpp; sourceTree = "<group>"; };
+		971487DD227B7A8900570548 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
+		971487E0227B7A9A00570548 /* Group.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Group.cpp; sourceTree = "<group>"; };
+		971487E1227B7A9A00570548 /* Group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,12 +163,20 @@
 		971487CB227A38F000570548 /* sections */ = {
 			isa = PBXGroup;
 			children = (
+				971487D5227B6E5100570548 /* Fields.h */,
+				971487D4227B6E5100570548 /* Fields.cpp */,
+				971487D9227B7A5800570548 /* Join.h */,
+				971487D8227B7A5800570548 /* Join.cpp */,
 				971487C8227A38E800570548 /* Clause.h */,
 				971487C7227A38E800570548 /* Clause.cpp */,
 				971487CD227A434700570548 /* ClauseValue.h */,
 				971487CC227A434700570548 /* ClauseValue.cpp */,
 				971487D1227A438A00570548 /* ClauseGroup.h */,
 				971487D0227A438A00570548 /* ClauseGroup.cpp */,
+				971487DD227B7A8900570548 /* Order.h */,
+				971487DC227B7A8900570548 /* Order.cpp */,
+				971487E1227B7A9A00570548 /* Group.h */,
+				971487E0227B7A9A00570548 /* Group.cpp */,
 			);
 			path = sections;
 			sourceTree = "<group>";
@@ -171,9 +195,13 @@
 				971487B1227A286700570548 /* Mysql.h in Headers */,
 				971487BD227A2D1600570548 /* Result.h in Headers */,
 				971487C6227A321100570548 /* MysqlGenerator.h in Headers */,
+				971487DB227B7A5800570548 /* Join.h in Headers */,
+				971487D7227B6E5100570548 /* Fields.h in Headers */,
 				971487CF227A434700570548 /* ClauseValue.h in Headers */,
 				971487D3227A438A00570548 /* ClauseGroup.h in Headers */,
+				971487DF227B7A8900570548 /* Order.h in Headers */,
 				971487A4227A27BE00570548 /* Database.h in Headers */,
+				971487E3227B7A9A00570548 /* Group.h in Headers */,
 				971487AD227A285200570548 /* ConnectorBase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,11 +268,15 @@
 				971487C9227A38E800570548 /* Clause.cpp in Sources */,
 				971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */,
 				971487BC227A2D1600570548 /* Result.cpp in Sources */,
+				971487DE227B7A8900570548 /* Order.cpp in Sources */,
+				971487D6227B6E5100570548 /* Fields.cpp in Sources */,
 				971487A3227A27BE00570548 /* Database.cpp in Sources */,
 				971487C1227A2D9900570548 /* GeneratorBase.cpp in Sources */,
 				971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */,
 				971487A7227A27E200570548 /* Model.cpp in Sources */,
 				971487AC227A285200570548 /* ConnectorBase.cpp in Sources */,
+				971487E2227B7A9A00570548 /* Group.cpp in Sources */,
+				971487DA227B7A5800570548 /* Join.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

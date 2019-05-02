@@ -10,5 +10,25 @@
 #define ClauseGroup_hpp
 
 #include <stdio.h>
+#include "Clause.h"
+#include <libnrcore/memory/Array.h>
+#include <libnrcore/memory/Ref.h>
+
+namespace nrcore {
+    
+    class ClauseGroup : public Clause {
+        ClauseGroup();
+        ClauseGroup(const ClauseGroup &clause);
+        virtual ~ClauseGroup();
+        
+        void addClause(Ref<Clause> clause);
+        
+        String toString();
+        
+    protected:
+        Array<Ref<Clause>> clauses;
+    };
+    
+}
 
 #endif /* ClauseGroup_hpp */

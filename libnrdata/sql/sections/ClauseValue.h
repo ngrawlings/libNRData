@@ -10,5 +10,24 @@
 #define ClauseValue_hpp
 
 #include <stdio.h>
+#include "Clause.h"
+
+namespace nrcore {
+    
+    class ClauseValue : public Clause {
+        ClauseValue(String f1, String comparitor, String f2);
+        ClauseValue(Value f1, String comparitor, Value f2);
+        ClauseValue(const ClauseValue &clause);
+        virtual ~ClauseValue();
+        
+        String toString();
+        
+    protected:
+        String _operator;
+        Value field1, field2;
+        String comparitor;
+    };
+    
+}
 
 #endif /* ClauseValue_hpp */

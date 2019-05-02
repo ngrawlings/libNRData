@@ -36,19 +36,19 @@ namespace nrcore {
         protected:
             TYPE _type;
             String _value;
+            
         };
         
     public:
-        Clause(String f1, String comparitor, String f2);
-        Clause(Value f1, String comparitor, Value f2);
-        Clause(const Clause &clause);
+        Clause(String _operator="AND");
         virtual ~Clause();
         
-        String toString();
+        String getOperator();
+        
+        virtual String toString() = 0;
         
     protected:
-        Value field1, field2;
-        String comparitor;
+        String _operator;
     };
     
 }

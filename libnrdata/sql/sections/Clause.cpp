@@ -43,27 +43,16 @@ namespace nrcore {
         }
     }
     
-    Clause::Clause(String f1, String comparitor, String f2) :
-        field1(Value(STRING, f1)), comparitor(comparitor), field2(Value(STRING, f2)) {
-        
-    }
-    
-    Clause::Clause(Value f1, String comparitor, Value f2) :
-        field1(f1), comparitor(comparitor), field2(f2) {
-        
-    }
-    
-    Clause::Clause(const Clause &clause) :
-        field1(clause.field1), comparitor(clause.comparitor), field2(clause.field2) {
-        
+    Clause::Clause(String _operator) {
+        this->_operator = _operator;
     }
     
     Clause::~Clause() {
         
     }
     
-    String Clause::toString() {
-        return field1.value() + comparitor + field2.value();
+    String Clause::getOperator() {
+        return _operator;
     }
 
 }
