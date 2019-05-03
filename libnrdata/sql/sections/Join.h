@@ -10,5 +10,25 @@
 #define Join_hpp
 
 #include <stdio.h>
+#include <libnrcore/memory/Ref.h>
+#include <libnrcore/memory/String.h>
+#include "Clause.h"
+
+namespace nrcore {
+    
+    class Join {
+    public:
+        Join(String table, Ref<Clause> clause, String type = "INNER");
+        virtual ~Join();
+        
+        String toString();
+        
+    private:
+        String type;
+        String table;
+        Ref<Clause> clause;
+    };
+    
+}
 
 #endif /* Join_hpp */

@@ -7,3 +7,19 @@
 //
 
 #include "Join.h"
+
+namespace nrcore {
+    
+    Join::Join(String table, Ref<Clause> clause, String type) : type(type), table(table), clause(clause) {
+        
+    }
+    
+    Join::~Join() {
+        
+    }
+    
+    String Join::toString() {
+        return String("% JOIN % ON %").arg(type).arg(table).arg(clause.getPtr()->toString());
+    }
+    
+}

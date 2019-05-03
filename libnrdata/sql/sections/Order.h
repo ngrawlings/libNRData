@@ -10,5 +10,36 @@
 #define Order_hpp
 
 #include <stdio.h>
+#include <libnrcore/memory/Ref.h>
+#include <libnrcore/memory/Array.h>
+#include <libnrcore/memory/String.h>
+
+namespace nrcore {
+ 
+    class Order {
+    public:
+        typedef enum {
+            ASC,
+            DESC
+        } DIRECTION;
+        
+    public:
+        Order();
+        virtual ~Order();
+        
+        void add(String field, DIRECTION direction);
+        
+        String toString();
+        
+    protected:
+        typedef struct {
+            String field;
+            DIRECTION direction;
+        } ORDER;
+        
+        Array< Ref<ORDER> > orders;
+    };
+    
+}
 
 #endif /* Order_hpp */

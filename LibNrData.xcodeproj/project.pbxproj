@@ -36,8 +36,10 @@
 		971487DB227B7A5800570548 /* Join.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487D9227B7A5800570548 /* Join.h */; };
 		971487DE227B7A8900570548 /* Order.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487DC227B7A8900570548 /* Order.cpp */; };
 		971487DF227B7A8900570548 /* Order.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487DD227B7A8900570548 /* Order.h */; };
-		971487E2227B7A9A00570548 /* Group.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487E0227B7A9A00570548 /* Group.cpp */; };
-		971487E3227B7A9A00570548 /* Group.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487E1227B7A9A00570548 /* Group.h */; };
+		971487E6227CBA6800570548 /* Values.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487E4227CBA6800570548 /* Values.cpp */; };
+		971487E7227CBA6800570548 /* Values.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487E5227CBA6800570548 /* Values.h */; };
+		971487EA227CBE7800570548 /* OffsetLimit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487E8227CBE7800570548 /* OffsetLimit.cpp */; };
+		971487EB227CBE7800570548 /* OffsetLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487E9227CBE7800570548 /* OffsetLimit.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,8 +73,10 @@
 		971487D9227B7A5800570548 /* Join.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Join.h; sourceTree = "<group>"; };
 		971487DC227B7A8900570548 /* Order.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Order.cpp; sourceTree = "<group>"; };
 		971487DD227B7A8900570548 /* Order.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
-		971487E0227B7A9A00570548 /* Group.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Group.cpp; sourceTree = "<group>"; };
-		971487E1227B7A9A00570548 /* Group.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		971487E4227CBA6800570548 /* Values.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Values.cpp; sourceTree = "<group>"; };
+		971487E5227CBA6800570548 /* Values.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Values.h; sourceTree = "<group>"; };
+		971487E8227CBE7800570548 /* OffsetLimit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OffsetLimit.cpp; sourceTree = "<group>"; };
+		971487E9227CBE7800570548 /* OffsetLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OffsetLimit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,8 +179,10 @@
 				971487D0227A438A00570548 /* ClauseGroup.cpp */,
 				971487DD227B7A8900570548 /* Order.h */,
 				971487DC227B7A8900570548 /* Order.cpp */,
-				971487E1227B7A9A00570548 /* Group.h */,
-				971487E0227B7A9A00570548 /* Group.cpp */,
+				971487E5227CBA6800570548 /* Values.h */,
+				971487E4227CBA6800570548 /* Values.cpp */,
+				971487E9227CBE7800570548 /* OffsetLimit.h */,
+				971487E8227CBE7800570548 /* OffsetLimit.cpp */,
 			);
 			path = sections;
 			sourceTree = "<group>";
@@ -199,9 +205,10 @@
 				971487D7227B6E5100570548 /* Fields.h in Headers */,
 				971487CF227A434700570548 /* ClauseValue.h in Headers */,
 				971487D3227A438A00570548 /* ClauseGroup.h in Headers */,
+				971487EB227CBE7800570548 /* OffsetLimit.h in Headers */,
 				971487DF227B7A8900570548 /* Order.h in Headers */,
+				971487E7227CBA6800570548 /* Values.h in Headers */,
 				971487A4227A27BE00570548 /* Database.h in Headers */,
-				971487E3227B7A9A00570548 /* Group.h in Headers */,
 				971487AD227A285200570548 /* ConnectorBase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,9 +271,11 @@
 			files = (
 				971487C5227A321100570548 /* MysqlGenerator.cpp in Sources */,
 				971487B0227A286700570548 /* Mysql.cpp in Sources */,
+				971487E6227CBA6800570548 /* Values.cpp in Sources */,
 				971487CE227A434700570548 /* ClauseValue.cpp in Sources */,
 				971487C9227A38E800570548 /* Clause.cpp in Sources */,
 				971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */,
+				971487EA227CBE7800570548 /* OffsetLimit.cpp in Sources */,
 				971487BC227A2D1600570548 /* Result.cpp in Sources */,
 				971487DE227B7A8900570548 /* Order.cpp in Sources */,
 				971487D6227B6E5100570548 /* Fields.cpp in Sources */,
@@ -275,7 +284,6 @@
 				971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */,
 				971487A7227A27E200570548 /* Model.cpp in Sources */,
 				971487AC227A285200570548 /* ConnectorBase.cpp in Sources */,
-				971487E2227B7A9A00570548 /* Group.cpp in Sources */,
 				971487DA227B7A5800570548 /* Join.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
