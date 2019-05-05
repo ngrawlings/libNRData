@@ -104,6 +104,4 @@ namespace nrcore {
         return String("DROP TABLE `%`;").arg(table);
     }
     
-    
-    
 }

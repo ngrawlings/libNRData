@@ -40,6 +40,8 @@
 		971487E7227CBA6800570548 /* Values.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487E5227CBA6800570548 /* Values.h */; };
 		971487EA227CBE7800570548 /* OffsetLimit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487E8227CBE7800570548 /* OffsetLimit.cpp */; };
 		971487EB227CBE7800570548 /* OffsetLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487E9227CBE7800570548 /* OffsetLimit.h */; };
+		971487F7227D6AF700570548 /* FieldDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487F5227D6AF700570548 /* FieldDescriptor.cpp */; };
+		971487F8227D6AF700570548 /* FieldDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487F6227D6AF700570548 /* FieldDescriptor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -77,6 +79,8 @@
 		971487E5227CBA6800570548 /* Values.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Values.h; sourceTree = "<group>"; };
 		971487E8227CBE7800570548 /* OffsetLimit.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = OffsetLimit.cpp; sourceTree = "<group>"; };
 		971487E9227CBE7800570548 /* OffsetLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OffsetLimit.h; sourceTree = "<group>"; };
+		971487F5227D6AF700570548 /* FieldDescriptor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldDescriptor.cpp; sourceTree = "<group>"; };
+		971487F6227D6AF700570548 /* FieldDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldDescriptor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +187,8 @@
 				971487E4227CBA6800570548 /* Values.cpp */,
 				971487E9227CBE7800570548 /* OffsetLimit.h */,
 				971487E8227CBE7800570548 /* OffsetLimit.cpp */,
+				971487F6227D6AF700570548 /* FieldDescriptor.h */,
+				971487F5227D6AF700570548 /* FieldDescriptor.cpp */,
 			);
 			path = sections;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 				971487B1227A286700570548 /* Mysql.h in Headers */,
 				971487BD227A2D1600570548 /* Result.h in Headers */,
 				971487C6227A321100570548 /* MysqlGenerator.h in Headers */,
+				971487F8227D6AF700570548 /* FieldDescriptor.h in Headers */,
 				971487DB227B7A5800570548 /* Join.h in Headers */,
 				971487D7227B6E5100570548 /* Fields.h in Headers */,
 				971487CF227A434700570548 /* ClauseValue.h in Headers */,
@@ -283,6 +290,7 @@
 				971487C1227A2D9900570548 /* GeneratorBase.cpp in Sources */,
 				971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */,
 				971487A7227A27E200570548 /* Model.cpp in Sources */,
+				971487F7227D6AF700570548 /* FieldDescriptor.cpp in Sources */,
 				971487AC227A285200570548 /* ConnectorBase.cpp in Sources */,
 				971487DA227B7A5800570548 /* Join.cpp in Sources */,
 			);
