@@ -23,11 +23,15 @@ namespace nrcore {
         OffsetLimit(long long offset, int limit);
         virtual ~OffsetLimit();
         
+        void offset(long long offset);
+        void limit(int limit);
+        
         String toString();
         
+        
     protected:
-        long long offset;
-        int limit;
+        long long _offset;
+        int _limit;
     };
     
 }

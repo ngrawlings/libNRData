@@ -16,7 +16,7 @@ namespace nrcore {
     
     class MysqlGenerator : public GeneratorBase {
     public:
-        MysqlGenerator();
+        MysqlGenerator(String name);
         virtual ~MysqlGenerator();
         
         String sql(TYPE type);
@@ -26,6 +26,7 @@ namespace nrcore {
         String insert();
         String update();
         String _delete();
+        String create();
         String drop();
     };
     

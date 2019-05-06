@@ -10,7 +10,7 @@
 
 namespace nrcore {
     
-    MysqlGenerator::MysqlGenerator() {
+    MysqlGenerator::MysqlGenerator(String name) : GeneratorBase(name) {
         
     }
     
@@ -32,6 +32,9 @@ namespace nrcore {
             case DELETE:
                 return _delete();
                 
+            case CREATE:
+                return create();
+                
             case DROP:
                 return drop();
         }
@@ -42,8 +45,8 @@ namespace nrcore {
         String fields = this->fields.toString();
         String joins = this->getJoins();
         String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
-        String order = this->order.toString();
-        String group = this->group.toString();
+        String order = this->_order.toString();
+        String group = this->_group.toString();
         String limit = this->offset_limit.toString();
         
         String sql = String("SELECT % FROM `%`").arg(fields).arg(table);
@@ -98,6 +101,10 @@ namespace nrcore {
     String MysqlGenerator::_delete() {
         String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
         return String("DELETE FROM `%` WHERE %;").arg(table).arg(where);
+    }
+    
+    String MysqlGenerator::create() {
+        return "";
     }
     
     String MysqlGenerator::drop() {

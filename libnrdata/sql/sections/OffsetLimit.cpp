@@ -11,32 +11,40 @@
 namespace nrcore {
     
     OffsetLimit::OffsetLimit() {
-        this->offset = -1;
-        this->limit = -1;
+        _offset = -1;
+        _limit = -1;
     }
     
     OffsetLimit::OffsetLimit(int limit) {
-        this->offset = -1;
-        this->limit = limit;
+        _offset = -1;
+        _limit = limit;
     }
  
     OffsetLimit::OffsetLimit(long long offset, int limit) {
-        this->offset = offset;
-        this->limit = limit;
+        _offset = offset;
+        _limit = limit;
     }
     
     OffsetLimit::~OffsetLimit() {
         
     }
     
+    void OffsetLimit::offset(long long offset) {
+        _offset = offset;
+    }
+    
+    void OffsetLimit::limit(int limit) {
+        _limit = limit;
+    }
+    
     String OffsetLimit::toString() {
-        if (offset == -1 && limit == -1)
+        if (_offset == -1 && _limit == -1)
             return String("");
         
-        if (offset == -1)
-            return String("LIMIT %").arg(limit);
+        if (_offset == -1)
+            return String("LIMIT %").arg(_limit);
         
-        return String("LIMIT %, %").arg(offset).arg(limit);
+        return String("LIMIT %, %").arg(_offset).arg(_limit);
     }
     
 }

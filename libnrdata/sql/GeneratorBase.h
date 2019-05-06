@@ -21,6 +21,8 @@
 #include "./sections/Order.h"
 #include "./sections/OffsetLimit.h"
 
+#include "./sections/FieldDescriptor.h"
+
 namespace nrcore {
     
     class GeneratorBase {
@@ -30,13 +32,35 @@ namespace nrcore {
             INSERT,
             UPDATE,
             DELETE,
+            CREATE,
             DROP
         } TYPE;
     public:
-        GeneratorBase();
+        GeneratorBase(String table);
         virtual ~GeneratorBase();
         
         virtual String sql(TYPE type) = 0;
+        
+        void select(String field);
+        
+        void join(String table, Ref<Clause> clause);
+        void leftJoin(String table, Ref<Clause> clause);
+        void rightJoin(String table, Ref<Clause> clause);
+        void outerJoin(String table, Ref<Clause> clause);
+        
+        void value(String name, String value);
+        
+        void setClause(Ref<Clause> clause);
+        
+        void order(String field, Order::DIRECTION direction);
+        void group(String field);
+        
+        void offset(long long offset);
+        void limit(int offset);
+        
+        void setEngine(String engine);
+        void setCharset(String charset);
+        void setCollate(String collate);
         
     protected:
         String table;
@@ -44,9 +68,14 @@ namespace nrcore {
         Array< Ref<Join> > joins;
         Values values;
         Ref<Clause> clause;
-        Order order;
-        Fields group;
+        Order _order;
+        Fields _group;
         OffsetLimit offset_limit;
+        
+        Array<FieldDescriptor> field_descriptors;
+        String engine;
+        String charset;
+        String collate;
         
         String getJoins();
     };

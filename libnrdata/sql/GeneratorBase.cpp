@@ -10,7 +10,7 @@
 
 namespace nrcore {
  
-    GeneratorBase::GeneratorBase() {
+    GeneratorBase::GeneratorBase(String table) : table(table) {
         
     }
     
@@ -30,6 +30,62 @@ namespace nrcore {
         }
         
         return ret;
+    }
+    
+    void GeneratorBase::select(String field) {
+        fields.addField(field);
+    }
+    
+    void GeneratorBase::join(String table, Ref<Clause> clause) {
+        joins.push(Ref<Join>(new Join(table, clause)));
+    }
+    
+    void GeneratorBase::leftJoin(String table, Ref<Clause> clause) {
+        joins.push(Ref<Join>(new Join(table, clause, "LEFT")));
+    }
+    
+    void GeneratorBase::rightJoin(String table, Ref<Clause> clause) {
+        joins.push(Ref<Join>(new Join(table, clause, "RIGHT")));
+    }
+                           
+    void GeneratorBase::outerJoin(String table, Ref<Clause> clause) {
+        joins.push(Ref<Join>(new Join(table, clause, "OUTER")));
+    }
+    
+    void GeneratorBase::value(String name, String value) {
+        values.add(name, value);
+    }
+    
+    void GeneratorBase::setClause(Ref<Clause> clause) {
+        this->clause = clause;
+    }
+    
+    void GeneratorBase::order(String field, Order::DIRECTION direction) {
+        _order.add(field, direction);
+    }
+    
+    void GeneratorBase::group(String field) {
+        _group.addField(field);
+    }
+    
+    void GeneratorBase::offset(long long offset) {
+        offset_limit.offset(offset);
+    }
+    
+    void GeneratorBase::limit(int limit) {
+        offset_limit.limit(limit);
+    }
+    
+    void GeneratorBase::setEngine(String engine) {
+        this->engine = engine;
+    }
+    
+    void GeneratorBase::setCharset(String charset) {
+        this->charset = charset;
+    }
+    
+    void GeneratorBase::setCollate(String collate) {
+        this->collate = collate;
     }
     
 }
