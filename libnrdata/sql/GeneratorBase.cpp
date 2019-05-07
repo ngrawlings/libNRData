@@ -76,6 +76,10 @@ namespace nrcore {
         offset_limit.limit(limit);
     }
     
+    void GeneratorBase::fieldDescriptor(Ref<FieldDescriptor> fd) {
+        field_descriptors.push(fd);
+    }
+    
     void GeneratorBase::setEngine(String engine) {
         this->engine = engine;
     }

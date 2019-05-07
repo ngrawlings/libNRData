@@ -58,6 +58,8 @@ namespace nrcore {
         void offset(long long offset);
         void limit(int offset);
         
+        void fieldDescriptor(Ref<FieldDescriptor> fd);
+        
         void setEngine(String engine);
         void setCharset(String charset);
         void setCollate(String collate);
@@ -72,7 +74,7 @@ namespace nrcore {
         Fields _group;
         OffsetLimit offset_limit;
         
-        Array<FieldDescriptor> field_descriptors;
+        Array< Ref<FieldDescriptor> > field_descriptors;
         String engine;
         String charset;
         String collate;
