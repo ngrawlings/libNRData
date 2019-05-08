@@ -10,15 +10,18 @@
 #define MysqlGenerator_hpp
 
 #include <stdio.h>
+#include <mysql.h>
+
 #include "GeneratorBase.h"
 
 namespace nrcore {
     
     class MysqlGenerator : public GeneratorBase {
     public:
-        MysqlGenerator(String name);
+        MysqlGenerator(MYSQL *mysql, String name);
         virtual ~MysqlGenerator();
         
+        String escape(String str);
         String sql(TYPE type);
         
     protected:
@@ -28,6 +31,9 @@ namespace nrcore {
         String _delete();
         String create();
         String drop();
+        
+    private:
+        MYSQL *mysql;
     };
     
 }

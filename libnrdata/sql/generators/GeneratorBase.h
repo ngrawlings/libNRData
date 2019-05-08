@@ -14,14 +14,14 @@
 #include <libnrcore/memory/Array.h>
 #include <libnrcore/memory/String.h>
 
-#include "./sections/Fields.h"
-#include "./sections/Join.h"
-#include "./sections/Values.h"
-#include "./sections/Clause.h"
-#include "./sections/Order.h"
-#include "./sections/OffsetLimit.h"
+#include "../sections/mysql/Fields.h"
+#include "../sections/mysql/Join.h"
+#include "../sections/mysql/Values.h"
+#include "../sections/mysql/Clause.h"
+#include "../sections/mysql/Order.h"
+#include "../sections/mysql/OffsetLimit.h"
 
-#include "./sections/FieldDescriptor.h"
+#include "../sections/mysql/FieldDescriptor.h"
 
 namespace nrcore {
     
@@ -39,6 +39,7 @@ namespace nrcore {
         GeneratorBase(String table);
         virtual ~GeneratorBase();
         
+        virtual String escape(String str) = 0;
         virtual String sql(TYPE type) = 0;
         
         void select(String field);

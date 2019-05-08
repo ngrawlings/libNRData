@@ -7,3 +7,23 @@
 //
 
 #include "ConnectorBase.h"
+
+namespace nrcore {
+    
+    ConnectorBase::ConnectorBase() {
+        connection_instance = 0;
+    }
+    
+    ConnectorBase::~ConnectorBase() {
+        
+    }
+    
+    void ConnectorBase::getConnection(void* connection) {
+        connection_instance = connection;
+    }
+    
+    void* ConnectorBase::getConnection() {
+        return connection_instance;
+    }
+    
+}

@@ -14,6 +14,8 @@
 
 namespace nrcore {
     
+    class GeneratorBase;
+    
     class Clause {
     public:
         typedef enum {
@@ -24,7 +26,7 @@ namespace nrcore {
         
         class Value {
         public:
-            Value(TYPE type, String value);
+            Value(GeneratorBase *gb, TYPE type, String value);
             Value(const Value &value);
             virtual ~Value();
             

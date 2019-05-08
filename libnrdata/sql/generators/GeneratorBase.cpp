@@ -33,27 +33,27 @@ namespace nrcore {
     }
     
     void GeneratorBase::select(String field) {
-        fields.addField(field);
+        fields.addField(escape(field));
     }
     
     void GeneratorBase::join(String table, Ref<Clause> clause) {
-        joins.push(Ref<Join>(new Join(table, clause)));
+        joins.push(Ref<Join>(new Join(escape(table), clause)));
     }
     
     void GeneratorBase::leftJoin(String table, Ref<Clause> clause) {
-        joins.push(Ref<Join>(new Join(table, clause, "LEFT")));
+        joins.push(Ref<Join>(new Join(escape(table), clause, "LEFT")));
     }
     
     void GeneratorBase::rightJoin(String table, Ref<Clause> clause) {
-        joins.push(Ref<Join>(new Join(table, clause, "RIGHT")));
+        joins.push(Ref<Join>(new Join(escape(table), clause, "RIGHT")));
     }
                            
     void GeneratorBase::outerJoin(String table, Ref<Clause> clause) {
-        joins.push(Ref<Join>(new Join(table, clause, "OUTER")));
+        joins.push(Ref<Join>(new Join(escape(table), clause, "OUTER")));
     }
     
     void GeneratorBase::value(String name, String value) {
-        values.add(name, value);
+        values.add(escape(name), escape(value));
     }
     
     void GeneratorBase::setClause(Ref<Clause> clause) {
@@ -61,11 +61,11 @@ namespace nrcore {
     }
     
     void GeneratorBase::order(String field, Order::DIRECTION direction) {
-        _order.add(field, direction);
+        _order.add(escape(field), direction);
     }
     
     void GeneratorBase::group(String field) {
-        _group.addField(field);
+        _group.addField(escape(field));
     }
     
     void GeneratorBase::offset(long long offset) {
@@ -81,15 +81,15 @@ namespace nrcore {
     }
     
     void GeneratorBase::setEngine(String engine) {
-        this->engine = engine;
+        this->engine = escape(engine);
     }
     
     void GeneratorBase::setCharset(String charset) {
-        this->charset = charset;
+        this->charset = escape(charset);
     }
     
     void GeneratorBase::setCollate(String collate) {
-        this->collate = collate;
+        this->collate = escape(collate);
     }
     
 }

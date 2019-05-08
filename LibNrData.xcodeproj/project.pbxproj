@@ -13,8 +13,6 @@
 		971487A8227A27E200570548 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487A6227A27E200570548 /* Model.h */; };
 		971487AC227A285200570548 /* ConnectorBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AA227A285200570548 /* ConnectorBase.cpp */; };
 		971487AD227A285200570548 /* ConnectorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AB227A285200570548 /* ConnectorBase.h */; };
-		971487B0227A286700570548 /* Mysql.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AE227A286700570548 /* Mysql.cpp */; };
-		971487B1227A286700570548 /* Mysql.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AF227A286700570548 /* Mysql.h */; };
 		971487B4227A2C0F00570548 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 971487B3227A2C0F00570548 /* libmysqlclient.a */; };
 		971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487B5227A2CAD00570548 /* ResultSet.cpp */; };
 		971487B8227A2CAD00570548 /* ResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487B6227A2CAD00570548 /* ResultSet.h */; };
@@ -42,6 +40,10 @@
 		971487EB227CBE7800570548 /* OffsetLimit.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487E9227CBE7800570548 /* OffsetLimit.h */; };
 		971487F7227D6AF700570548 /* FieldDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487F5227D6AF700570548 /* FieldDescriptor.cpp */; };
 		971487F8227D6AF700570548 /* FieldDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487F6227D6AF700570548 /* FieldDescriptor.h */; };
+		971487FF2281D32D00570548 /* MysqlConnector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487FD2281D32D00570548 /* MysqlConnector.cpp */; };
+		971488002281D32D00570548 /* MysqlConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487FE2281D32D00570548 /* MysqlConnector.h */; };
+		971488052282007F00570548 /* GeneratorFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971488032282007F00570548 /* GeneratorFactory.cpp */; };
+		971488062282007F00570548 /* GeneratorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 971488042282007F00570548 /* GeneratorFactory.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,8 +54,6 @@
 		971487A6227A27E200570548 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		971487AA227A285200570548 /* ConnectorBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectorBase.cpp; sourceTree = "<group>"; };
 		971487AB227A285200570548 /* ConnectorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectorBase.h; sourceTree = "<group>"; };
-		971487AE227A286700570548 /* Mysql.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mysql.cpp; sourceTree = "<group>"; };
-		971487AF227A286700570548 /* Mysql.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mysql.h; sourceTree = "<group>"; };
 		971487B3227A2C0F00570548 /* libmysqlclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmysqlclient.a; path = "../../../../../usr/local/Cellar/mysql-connector-c/6.1.11/lib/libmysqlclient.a"; sourceTree = "<group>"; };
 		971487B5227A2CAD00570548 /* ResultSet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResultSet.cpp; sourceTree = "<group>"; };
 		971487B6227A2CAD00570548 /* ResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultSet.h; sourceTree = "<group>"; };
@@ -81,6 +81,10 @@
 		971487E9227CBE7800570548 /* OffsetLimit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OffsetLimit.h; sourceTree = "<group>"; };
 		971487F5227D6AF700570548 /* FieldDescriptor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldDescriptor.cpp; sourceTree = "<group>"; };
 		971487F6227D6AF700570548 /* FieldDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldDescriptor.h; sourceTree = "<group>"; };
+		971487FD2281D32D00570548 /* MysqlConnector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MysqlConnector.cpp; sourceTree = "<group>"; };
+		971487FE2281D32D00570548 /* MysqlConnector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MysqlConnector.h; sourceTree = "<group>"; };
+		971488032282007F00570548 /* GeneratorFactory.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GeneratorFactory.cpp; sourceTree = "<group>"; };
+		971488042282007F00570548 /* GeneratorFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratorFactory.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,8 +135,8 @@
 			children = (
 				971487AB227A285200570548 /* ConnectorBase.h */,
 				971487AA227A285200570548 /* ConnectorBase.cpp */,
-				971487AF227A286700570548 /* Mysql.h */,
-				971487AE227A286700570548 /* Mysql.cpp */,
+				971487FE2281D32D00570548 /* MysqlConnector.h */,
+				971487FD2281D32D00570548 /* MysqlConnector.cpp */,
 			);
 			path = connectors;
 			sourceTree = "<group>";
@@ -159,16 +163,23 @@
 		971487BE227A2D8D00570548 /* sql */ = {
 			isa = PBXGroup;
 			children = (
+				971488022282005500570548 /* generators */,
 				971487CB227A38F000570548 /* sections */,
-				971487C0227A2D9900570548 /* GeneratorBase.h */,
-				971487BF227A2D9900570548 /* GeneratorBase.cpp */,
-				971487C4227A321100570548 /* MysqlGenerator.h */,
-				971487C3227A321100570548 /* MysqlGenerator.cpp */,
+				971488042282007F00570548 /* GeneratorFactory.h */,
+				971488032282007F00570548 /* GeneratorFactory.cpp */,
 			);
 			path = sql;
 			sourceTree = "<group>";
 		};
 		971487CB227A38F000570548 /* sections */ = {
+			isa = PBXGroup;
+			children = (
+				971488012281FE0E00570548 /* mysql */,
+			);
+			path = sections;
+			sourceTree = "<group>";
+		};
+		971488012281FE0E00570548 /* mysql */ = {
 			isa = PBXGroup;
 			children = (
 				971487D5227B6E5100570548 /* Fields.h */,
@@ -190,7 +201,18 @@
 				971487F6227D6AF700570548 /* FieldDescriptor.h */,
 				971487F5227D6AF700570548 /* FieldDescriptor.cpp */,
 			);
-			path = sections;
+			path = mysql;
+			sourceTree = "<group>";
+		};
+		971488022282005500570548 /* generators */ = {
+			isa = PBXGroup;
+			children = (
+				971487C0227A2D9900570548 /* GeneratorBase.h */,
+				971487BF227A2D9900570548 /* GeneratorBase.cpp */,
+				971487C4227A321100570548 /* MysqlGenerator.h */,
+				971487C3227A321100570548 /* MysqlGenerator.cpp */,
+			);
+			path = generators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,10 +226,10 @@
 				971487C2227A2D9900570548 /* GeneratorBase.h in Headers */,
 				971487B8227A2CAD00570548 /* ResultSet.h in Headers */,
 				971487CA227A38E800570548 /* Clause.h in Headers */,
-				971487B1227A286700570548 /* Mysql.h in Headers */,
 				971487BD227A2D1600570548 /* Result.h in Headers */,
 				971487C6227A321100570548 /* MysqlGenerator.h in Headers */,
 				971487F8227D6AF700570548 /* FieldDescriptor.h in Headers */,
+				971488002281D32D00570548 /* MysqlConnector.h in Headers */,
 				971487DB227B7A5800570548 /* Join.h in Headers */,
 				971487D7227B6E5100570548 /* Fields.h in Headers */,
 				971487CF227A434700570548 /* ClauseValue.h in Headers */,
@@ -215,6 +237,7 @@
 				971487EB227CBE7800570548 /* OffsetLimit.h in Headers */,
 				971487DF227B7A8900570548 /* Order.h in Headers */,
 				971487E7227CBA6800570548 /* Values.h in Headers */,
+				971488062282007F00570548 /* GeneratorFactory.h in Headers */,
 				971487A4227A27BE00570548 /* Database.h in Headers */,
 				971487AD227A285200570548 /* ConnectorBase.h in Headers */,
 			);
@@ -277,8 +300,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				971487C5227A321100570548 /* MysqlGenerator.cpp in Sources */,
-				971487B0227A286700570548 /* Mysql.cpp in Sources */,
 				971487E6227CBA6800570548 /* Values.cpp in Sources */,
+				971488052282007F00570548 /* GeneratorFactory.cpp in Sources */,
 				971487CE227A434700570548 /* ClauseValue.cpp in Sources */,
 				971487C9227A38E800570548 /* Clause.cpp in Sources */,
 				971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */,
@@ -286,6 +309,7 @@
 				971487BC227A2D1600570548 /* Result.cpp in Sources */,
 				971487DE227B7A8900570548 /* Order.cpp in Sources */,
 				971487D6227B6E5100570548 /* Fields.cpp in Sources */,
+				971487FF2281D32D00570548 /* MysqlConnector.cpp in Sources */,
 				971487A3227A27BE00570548 /* Database.cpp in Sources */,
 				971487C1227A2D9900570548 /* GeneratorBase.cpp in Sources */,
 				971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */,
@@ -416,7 +440,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",
@@ -432,7 +459,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				EXECUTABLE_PREFIX = lib;
-				HEADER_SEARCH_PATHS = /usr/local/include;
+				HEADER_SEARCH_PATHS = (
+					/usr/local/include,
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
+				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",

@@ -13,15 +13,16 @@
 
 namespace nrcore {
     
-    class ConnectionBase {
+    class ConnectorBase {
     public:
-        ConnectionBase();
-        virtual ~ConnectionBase();
+        ConnectorBase();
+        virtual ~ConnectorBase();
         
-        
+        void getConnection(void* connection);
+        void* getConnection();
         
     protected:
-        
+        void *connection_instance;
     };
     
 }

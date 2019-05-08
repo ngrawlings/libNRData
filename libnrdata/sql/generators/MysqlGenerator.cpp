@@ -8,14 +8,27 @@
 
 #include "MysqlGenerator.h"
 
+#include <libnrcore/exception/Exception.h>
+
+
 namespace nrcore {
     
-    MysqlGenerator::MysqlGenerator(String name) : GeneratorBase(name) {
+    MysqlGenerator::MysqlGenerator(MYSQL *mysql, String name) : GeneratorBase(name), mysql(mysql) {
         
     }
     
     MysqlGenerator::~MysqlGenerator() {
         
+    }
+    
+    String MysqlGenerator::escape(String str) {
+        char *to = new char[(str.length()*2)+1];
+        unsigned long len = mysql_real_escape_string(mysql, to, str.operator char *(), str.length());
+        
+        String ret(to, len);
+        
+        delete [] to;
+        return ret;
     }
     
     String MysqlGenerator::sql(TYPE type) {
@@ -38,7 +51,8 @@ namespace nrcore {
             case DROP:
                 return drop();
         }
-        return String("");
+        
+        throw Exception(-1,  "Reached non executable point");
     }
     
     String MysqlGenerator::select() {
@@ -104,7 +118,24 @@ namespace nrcore {
     }
     
     String MysqlGenerator::create() {
-        return "";
+        int len = (int)field_descriptors.length();
+        if (len) {
+            String fields = field_descriptors[0].getPtr()->toString();
+            String indexes = field_descriptors[0].getPtr()->getIndex();
+            
+            for (int i=1; i<len; i++) {
+                fields += String(", ")+field_descriptors[i].getPtr()->toString();
+                
+                String index = field_descriptors[i].getPtr()->getIndex();
+                if (index.length())
+                    indexes += String(", ")+index;
+            }
+            
+            return String("CREATE TABLE `%` (%, %) ENGINE=% DEFAULT CHARSET=% COLLATE=%;")
+                    .arg(table).arg(fields).arg(indexes).arg(engine).arg(charset).arg(collate);
+        }
+        
+        throw Exception(-1, "No field descriptors");
     }
     
     String MysqlGenerator::drop() {
