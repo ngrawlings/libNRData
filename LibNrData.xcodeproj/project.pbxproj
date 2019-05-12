@@ -441,6 +441,7 @@
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
 					/usr/local/include,
 					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
 				);
@@ -460,6 +461,7 @@
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				EXECUTABLE_PREFIX = lib;
 				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
 					/usr/local/include,
 					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
 				);

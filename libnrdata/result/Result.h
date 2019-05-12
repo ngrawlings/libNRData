@@ -9,6 +9,23 @@
 #ifndef Result_hpp
 #define Result_hpp
 
-#include <stdio.h>
+#include <libnrcore/memory/Array.h>
+#include <libnrcore/memory/String.h>
+
+#include "../connectors/ConnectorBase.h"
+
+namespace nrcore {
+    
+    class Result {
+    public:
+        Result(ConnectorBase *con, Array<String> values);
+        virtual ~Result();
+        
+    protected:
+        ConnectorBase *con;
+        Array<String> values;
+    };
+    
+}
 
 #endif /* Result_hpp */

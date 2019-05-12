@@ -11,17 +11,28 @@
 
 #include <stdio.h>
 #include "ConnectorBase.h"
+#include <libnrdata/sql/generators/MysqlGenerator.h>
 
+#include <mysql.h>
+
+#include <libnrcore/memory/Ref.h>
+#include <libnrcore/memory/Array.h>
 #include <libnrcore/memory/String.h>
+
+#include "../result/ResultSet.h"
 
 namespace nrcore {
     
     class MysqlConnector : public ConnectorBase {
     public:
-        MysqlConnector(String host, String username, String password);
+        MysqlConnector(String host, int port, String username, String password);
         virtual ~MysqlConnector();
         
+        void execute(String sql);
+        ResultSet query(String sql);
+        
     protected:
+        MYSQL *con;
         
     };
     

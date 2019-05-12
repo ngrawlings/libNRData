@@ -9,6 +9,26 @@
 #ifndef ResultSet_hpp
 #define ResultSet_hpp
 
-#include <stdio.h>
+#include "../connectors/ConnectorBase.h"
+#include "Result.h"
+
+#include <libnrcore/memory/Array.h>
+
+namespace nrcore {
+    
+    class ResultSet {
+    public:
+        ResultSet(ConnectorBase *con, Array<String> columns);
+        virtual ~ResultSet();
+        
+        Result row();
+        
+    protected:
+        ConnectorBase *con;
+        Array<String> columns;
+    };
+    
+}
+
 
 #endif /* ResultSet_hpp */

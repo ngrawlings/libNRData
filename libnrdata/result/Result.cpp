@@ -7,3 +7,32 @@
 //
 
 #include "Result.h"
+
+namespace nrcore {
+    
+    Result::Field::Field(String name, String value) {
+        _name = name;
+        _value = value;
+    }
+    
+    Result::Field::~Field() {
+        
+    }
+    
+    String Result::Field::name() {
+        return _name;
+    }
+    
+    String Result::Field::stringValue() {
+        return _value;
+    }
+    
+    Result::Result(ConnectorBase *con, Array<String> values) : con(con), values(values) {
+        
+    }
+    
+    Result::~Result() {
+        
+    }
+    
+}

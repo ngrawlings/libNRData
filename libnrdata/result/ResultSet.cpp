@@ -7,3 +7,19 @@
 //
 
 #include "ResultSet.h"
+
+namespace nrcore {
+    
+    ResultSet::ResultSet(ConnectorBase *con, Array<String> columns) : con(con), columns(columns) {
+        
+    }
+    
+    ResultSet::~ResultSet() {
+        
+    }
+    
+    Result ResultSet::row() {
+        return Result(con, Array<String>());
+    }
+    
+}
