@@ -12,6 +12,7 @@
 #include "../connectors/ConnectorBase.h"
 #include "Result.h"
 
+#include <libnrcore/memory/Ref.h>
 #include <libnrcore/memory/Array.h>
 
 namespace nrcore {
@@ -21,11 +22,18 @@ namespace nrcore {
         ResultSet(ConnectorBase *con, Array<String> columns);
         virtual ~ResultSet();
         
+        void addRow(Array<Memory> fields);
         Result row();
+        
+        int getColumnIndex(String name);
         
     protected:
         ConnectorBase *con;
         Array<String> columns;
+        Array< Ref<Result> > rows;
+        
+        unsigned long cursor_offset;
+        
     };
     
 }

@@ -10,20 +10,36 @@
 #define Result_hpp
 
 #include <libnrcore/memory/Array.h>
+#include <libnrcore/memory/Memory.h>
 #include <libnrcore/memory/String.h>
 
 #include "../connectors/ConnectorBase.h"
 
 namespace nrcore {
     
+    class ResultSet;
+    
     class Result {
     public:
-        Result(ConnectorBase *con, Array<String> values);
+        Result(ResultSet *result_set, Array<Memory> values);
+        Result(const Result &result);
         virtual ~Result();
         
+        String getString(int index);
+        int getInteger(int index);
+        unsigned long getUnsignedInteger(int index);
+        double getDouble(int index);
+        Memory getBlob(int index);
+        
+        String getString(String name);
+        int getInteger(String name);
+        unsigned long getUnsignedInteger(String name);
+        double getDouble(String name);
+        Memory getBlob(String name);
+        
     protected:
-        ConnectorBase *con;
-        Array<String> values;
+        ResultSet *result_set;
+        Array<Memory> values;
     };
     
 }

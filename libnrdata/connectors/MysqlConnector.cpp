@@ -38,18 +38,26 @@ namespace nrcore {
         
         int num_fields = mysql_num_fields(result);
         Array<String> columns;
+        Array<Memory> row;
 
         MYSQL_FIELD *field;
-        while((field = mysql_fetch_field(result)))
+        while((field = mysql_fetch_field(result))) {
             columns.push(String(field->name));
+            row.push(Memory());
+        }
         
         ResultSet res(this, columns);
         
-        MYSQL_ROW row;
-        while ((row = mysql_fetch_row(result))) {
-            for(int i = 0; i < num_fields; i++) {
-                columns[i] = String(row[i], strlen(row[i]));
-            }
+        MYSQL_ROW mysql_row;
+        unsigned long *lengths;
+        
+        while ((mysql_row = mysql_fetch_row(result))) {
+            lengths = mysql_fetch_lengths(result);
+            
+            for(int i = 0; i < num_fields; i++)
+                row[i] = Memory(mysql_row[i], lengths[i]);
+            
+            res.addRow(row);
         }
         
         mysql_free_result(result);
