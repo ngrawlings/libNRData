@@ -9,15 +9,27 @@
 #ifndef Model_hpp
 #define Model_hpp
 
+#include <libnrcore/memory/String.h>
+
+#include <libnrdata/connectors/Connector.h>
+
 namespace nrcore {
     
     class Model {
     public:
-        Model();
+        Model(Connector* con, String table);
         virtual ~Model();
         
-    protected:
+    protected:        
+        Connector* con;
+        String table;
+        int _revision;
         
+        virtual int revision() = 0;
+        virtual bool migrate(int revision) = 0;
+        
+        void loadRevision();
+        void runMigration();
     };
     
 }

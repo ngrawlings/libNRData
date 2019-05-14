@@ -21,6 +21,8 @@ namespace nrcore {
         
         if (mysql_real_connect(con, host, username, password, database, port, NULL, 0) == NULL)
             throw Exception(-1, mysql_error(con));
+        
+        setConnection(con);
     }
     
     MysqlConnector::~MysqlConnector() {
@@ -37,6 +39,8 @@ namespace nrcore {
             throw Exception(-1, mysql_error(con));
         
         MYSQL_RES *result = mysql_store_result(con);
+        if (!result)
+            throw Exception(-1, mysql_error(con));
         
         int num_fields = mysql_num_fields(result);
         Array<String> columns;
@@ -66,8 +70,8 @@ namespace nrcore {
         return res;
     }
     
-    Ref<BuilderBase> MysqlConnector::getBuilder(String table) {
-        return Ref<BuilderBase>(new MysqlBuilder(con, table));
+    Ref<Builder> MysqlConnector::getBuilder(String table) {
+        return Ref<Builder>(new MysqlBuilder(con, table));
     }
     
 }

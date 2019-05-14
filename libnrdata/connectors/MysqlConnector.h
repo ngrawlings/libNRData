@@ -10,7 +10,7 @@
 #define MysqlConnector_hpp
 
 #include <stdio.h>
-#include "ConnectorBase.h"
+#include "Connector.h"
 #include <libnrdata/sql/builders/MysqlBuilder.h>
 
 #include <mysql.h>
@@ -23,7 +23,7 @@
 
 namespace nrcore {
     
-    class MysqlConnector : public ConnectorBase {
+    class MysqlConnector : public Connector {
     public:
         MysqlConnector(const char* host, int port, const char* username, const char* password, const char* database);
         virtual ~MysqlConnector();
@@ -31,7 +31,7 @@ namespace nrcore {
         void execute(String sql);
         ResultSet query(String sql);
         
-        Ref<BuilderBase> getBuilder(String table);
+        Ref<Builder> getBuilder(String table);
         
     protected:
         MYSQL *con;

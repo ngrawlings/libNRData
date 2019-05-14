@@ -6,7 +6,7 @@
 //  Copyright © 2019 Liquidsoft Studio. All rights reserved.
 //
 
-#include "Result.h"
+#include "Row.h"
 #include "ResultSet.h"
 #include <libnrcore/exception/Exception.h>
 
@@ -14,23 +14,23 @@
 
 namespace nrcore {
     
-    Result::Result(ResultSet *result_set, Array<Memory> values) : result_set(result_set), values(values) {
+    Row::Row(ResultSet *result_set, Array<Memory> values) : result_set(result_set), values(values) {
         
     }
     
-    Result::Result(const Result &result) : result_set(result.result_set), values(result.values){
+    Row::Row(const Row &row) : result_set(row.result_set), values(row.values){
         
     }
     
-    Result::~Result() {
+    Row::~Row() {
         
     }
     
-    String Result::getString(int index) {
+    String Row::getString(int index) {
         return values[index];
     }
     
-    String Result::getString(String name) {
+    String Row::getString(String name) {
         int index = result_set->getColumnIndex(name);
         if (index == -1)
             throw Exception(-1, "Field not found");
@@ -38,12 +38,12 @@ namespace nrcore {
         return getString(index);
     }
     
-    int Result::getInteger(int index) {
+    int Row::getInteger(int index) {
         String v = getString(index);
         return atoi(v.operator char *());
     }
     
-    int Result::getInteger(String name) {
+    int Row::getInteger(String name) {
         int index = result_set->getColumnIndex(name);
         if (index == -1)
             throw Exception(-1, "Field not found");
@@ -51,11 +51,11 @@ namespace nrcore {
         return getInteger(index);
     }
     
-    unsigned long Result::getUnsignedInteger(int index) {
+    unsigned long Row::getUnsignedInteger(int index) {
         return std::stoul(getString(index).operator char *());
     }
     
-    unsigned long Result::getUnsignedInteger(String name) {
+    unsigned long Row::getUnsignedInteger(String name) {
         int index = result_set->getColumnIndex(name);
         if (index == -1)
             throw Exception(-1, "Field not found");
@@ -63,11 +63,11 @@ namespace nrcore {
         return getUnsignedInteger(index);
     }
     
-    double Result::getDouble(int index) {
+    double Row::getDouble(int index) {
         return atof(getString(index).operator char *());
     }
     
-    double Result::getDouble(String name) {
+    double Row::getDouble(String name) {
         int index = result_set->getColumnIndex(name);
         if (index == -1)
             throw Exception(-1, "Field not found");
@@ -75,11 +75,11 @@ namespace nrcore {
         return getDouble(index);
     }
     
-    Memory Result::getBlob(int index) {
+    Memory Row::getBlob(int index) {
         return values[index];
     }
     
-    Memory Result::getBlob(String name) {
+    Memory Row::getBlob(String name) {
         int index = result_set->getColumnIndex(name);
         if (index == -1)
             throw Exception(-1, "Field not found");

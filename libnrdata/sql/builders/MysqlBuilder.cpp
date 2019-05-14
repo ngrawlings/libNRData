@@ -13,11 +13,11 @@
 
 namespace nrcore {
     
-    MysqlBuilder::MysqlBuilder(MYSQL *mysql, String name) : BuilderBase(name), mysql(mysql) {
+    MysqlBuilder::MysqlBuilder(MYSQL *mysql, String name) : Builder(name), mysql(mysql) {
         
     }
     
-    MysqlBuilder::MysqlBuilder(const MysqlBuilder& gen) : BuilderBase(gen), mysql(gen.mysql) {
+    MysqlBuilder::MysqlBuilder(const MysqlBuilder& gen) : Builder(gen), mysql(gen.mysql) {
         
     }
     

@@ -9,10 +9,27 @@
 #ifndef Schemas_hpp
 #define Schemas_hpp
 
+#include <libnrcore/memory/String.h>
+
 namespace nrcore {
     
+    class Connector;
+    
     class Schemas {
+    public:
+        Schemas(Connector* con);
+        virtual ~Schemas();
         
+        void setConnection(Connector* con);
+        
+        int getRevision(String table);
+        void setRevision(String table, int revision);
+        
+    protected:
+        Connector* con;
+        
+        bool exists();
+        void create();
     };
     
 }

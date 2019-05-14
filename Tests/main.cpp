@@ -18,8 +18,8 @@ using namespace nrcore;
 int main(int argc, const char * argv[]) {
     try {
         MysqlConnector con("127.0.0.1", 3306, "root", "MovingOn", "test");
-        Ref<BuilderBase> _mb = con.getBuilder("test_table");
-        BuilderBase *mb = _mb.getPtr();
+        Ref<Builder> _mb = con.getBuilder("test_table");
+        Builder *mb = _mb.getPtr();
         
         FieldDescriptor f1("id", FieldDescriptor::INT);
         f1.setUnsigned(true);
@@ -36,7 +36,7 @@ int main(int argc, const char * argv[]) {
         mb->setCharset("utf8mb4");
         mb->setCollate("utf8mb4_0900_ai_ci");
         
-        String sql = mb->sql(BuilderBase::CREATE);
+        String sql = mb->sql(Builder::CREATE);
         
         printf("%s\n", sql.operator char *());
     } catch (Exception e) {

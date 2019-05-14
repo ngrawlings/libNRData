@@ -19,15 +19,15 @@
 		97004E72228B172100805A22 /* Schemas.h in Headers */ = {isa = PBXBuildFile; fileRef = 97004E70228B172100805A22 /* Schemas.h */; };
 		97004E75228B27EF00805A22 /* AlterTableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97004E73228B27EF00805A22 /* AlterTableField.cpp */; };
 		97004E76228B27EF00805A22 /* AlterTableField.h in Headers */ = {isa = PBXBuildFile; fileRef = 97004E74228B27EF00805A22 /* AlterTableField.h */; };
-		971487AC227A285200570548 /* ConnectorBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AA227A285200570548 /* ConnectorBase.cpp */; };
-		971487AD227A285200570548 /* ConnectorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AB227A285200570548 /* ConnectorBase.h */; };
+		971487AC227A285200570548 /* Connector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AA227A285200570548 /* Connector.cpp */; };
+		971487AD227A285200570548 /* Connector.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AB227A285200570548 /* Connector.h */; };
 		971487B4227A2C0F00570548 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 971487B3227A2C0F00570548 /* libmysqlclient.a */; };
 		971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487B5227A2CAD00570548 /* ResultSet.cpp */; };
 		971487B8227A2CAD00570548 /* ResultSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487B6227A2CAD00570548 /* ResultSet.h */; };
-		971487BC227A2D1600570548 /* Result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487BA227A2D1600570548 /* Result.cpp */; };
-		971487BD227A2D1600570548 /* Result.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487BB227A2D1600570548 /* Result.h */; };
-		971487C1227A2D9900570548 /* BuilderBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487BF227A2D9900570548 /* BuilderBase.cpp */; };
-		971487C2227A2D9900570548 /* BuilderBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487C0227A2D9900570548 /* BuilderBase.h */; };
+		971487BC227A2D1600570548 /* Row.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487BA227A2D1600570548 /* Row.cpp */; };
+		971487BD227A2D1600570548 /* Row.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487BB227A2D1600570548 /* Row.h */; };
+		971487C1227A2D9900570548 /* Builder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487BF227A2D9900570548 /* Builder.cpp */; };
+		971487C2227A2D9900570548 /* Builder.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487C0227A2D9900570548 /* Builder.h */; };
 		971487C5227A321100570548 /* MysqlBuilder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487C3227A321100570548 /* MysqlBuilder.cpp */; };
 		971487C6227A321100570548 /* MysqlBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487C4227A321100570548 /* MysqlBuilder.h */; };
 		971487C9227A38E800570548 /* Clause.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487C7227A38E800570548 /* Clause.cpp */; };
@@ -77,15 +77,15 @@
 		97004E73228B27EF00805A22 /* AlterTableField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AlterTableField.cpp; sourceTree = "<group>"; };
 		97004E74228B27EF00805A22 /* AlterTableField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlterTableField.h; sourceTree = "<group>"; };
 		97148799227A267E00570548 /* libnrdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libnrdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		971487AA227A285200570548 /* ConnectorBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectorBase.cpp; sourceTree = "<group>"; };
-		971487AB227A285200570548 /* ConnectorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectorBase.h; sourceTree = "<group>"; };
+		971487AA227A285200570548 /* Connector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Connector.cpp; sourceTree = "<group>"; };
+		971487AB227A285200570548 /* Connector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
 		971487B3227A2C0F00570548 /* libmysqlclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmysqlclient.a; path = "../../../../../usr/local/Cellar/mysql-connector-c/6.1.11/lib/libmysqlclient.a"; sourceTree = "<group>"; };
 		971487B5227A2CAD00570548 /* ResultSet.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ResultSet.cpp; sourceTree = "<group>"; };
 		971487B6227A2CAD00570548 /* ResultSet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultSet.h; sourceTree = "<group>"; };
-		971487BA227A2D1600570548 /* Result.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Result.cpp; sourceTree = "<group>"; };
-		971487BB227A2D1600570548 /* Result.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Result.h; sourceTree = "<group>"; };
-		971487BF227A2D9900570548 /* BuilderBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BuilderBase.cpp; sourceTree = "<group>"; };
-		971487C0227A2D9900570548 /* BuilderBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BuilderBase.h; sourceTree = "<group>"; };
+		971487BA227A2D1600570548 /* Row.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Row.cpp; sourceTree = "<group>"; };
+		971487BB227A2D1600570548 /* Row.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Row.h; sourceTree = "<group>"; };
+		971487BF227A2D9900570548 /* Builder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Builder.cpp; sourceTree = "<group>"; };
+		971487C0227A2D9900570548 /* Builder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Builder.h; sourceTree = "<group>"; };
 		971487C3227A321100570548 /* MysqlBuilder.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MysqlBuilder.cpp; sourceTree = "<group>"; };
 		971487C4227A321100570548 /* MysqlBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MysqlBuilder.h; sourceTree = "<group>"; };
 		971487C7227A38E800570548 /* Clause.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Clause.cpp; sourceTree = "<group>"; };
@@ -145,10 +145,10 @@
 		97004E6E228B170000805A22 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				97004E6B228B16A400805A22 /* Model.h */,
-				97004E6A228B16A400805A22 /* Model.cpp */,
 				97004E70228B172100805A22 /* Schemas.h */,
 				97004E6F228B172100805A22 /* Schemas.cpp */,
+				97004E6B228B16A400805A22 /* Model.h */,
+				97004E6A228B16A400805A22 /* Model.cpp */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -186,8 +186,8 @@
 		971487A9227A283800570548 /* connectors */ = {
 			isa = PBXGroup;
 			children = (
-				971487AB227A285200570548 /* ConnectorBase.h */,
-				971487AA227A285200570548 /* ConnectorBase.cpp */,
+				971487AB227A285200570548 /* Connector.h */,
+				971487AA227A285200570548 /* Connector.cpp */,
 				971487FE2281D32D00570548 /* MysqlConnector.h */,
 				971487FD2281D32D00570548 /* MysqlConnector.cpp */,
 			);
@@ -210,8 +210,8 @@
 			children = (
 				971487B6227A2CAD00570548 /* ResultSet.h */,
 				971487B5227A2CAD00570548 /* ResultSet.cpp */,
-				971487BB227A2D1600570548 /* Result.h */,
-				971487BA227A2D1600570548 /* Result.cpp */,
+				971487BB227A2D1600570548 /* Row.h */,
+				971487BA227A2D1600570548 /* Row.cpp */,
 			);
 			path = result;
 			sourceTree = "<group>";
@@ -263,8 +263,8 @@
 		971488022282005500570548 /* builders */ = {
 			isa = PBXGroup;
 			children = (
-				971487C0227A2D9900570548 /* BuilderBase.h */,
-				971487BF227A2D9900570548 /* BuilderBase.cpp */,
+				971487C0227A2D9900570548 /* Builder.h */,
+				971487BF227A2D9900570548 /* Builder.cpp */,
 				971487C4227A321100570548 /* MysqlBuilder.h */,
 				971487C3227A321100570548 /* MysqlBuilder.cpp */,
 			);
@@ -278,11 +278,11 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				971487C2227A2D9900570548 /* BuilderBase.h in Headers */,
+				971487C2227A2D9900570548 /* Builder.h in Headers */,
 				97004E6D228B16A400805A22 /* Model.h in Headers */,
 				971487B8227A2CAD00570548 /* ResultSet.h in Headers */,
 				971487CA227A38E800570548 /* Clause.h in Headers */,
-				971487BD227A2D1600570548 /* Result.h in Headers */,
+				971487BD227A2D1600570548 /* Row.h in Headers */,
 				971487C6227A321100570548 /* MysqlBuilder.h in Headers */,
 				971487F8227D6AF700570548 /* FieldDescriptor.h in Headers */,
 				971488002281D32D00570548 /* MysqlConnector.h in Headers */,
@@ -295,7 +295,7 @@
 				97004E72228B172100805A22 /* Schemas.h in Headers */,
 				971487DF227B7A8900570548 /* Order.h in Headers */,
 				971487E7227CBA6800570548 /* Values.h in Headers */,
-				971487AD227A285200570548 /* ConnectorBase.h in Headers */,
+				971487AD227A285200570548 /* Connector.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,16 +391,16 @@
 				971487C9227A38E800570548 /* Clause.cpp in Sources */,
 				971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */,
 				971487EA227CBE7800570548 /* OffsetLimit.cpp in Sources */,
-				971487BC227A2D1600570548 /* Result.cpp in Sources */,
+				971487BC227A2D1600570548 /* Row.cpp in Sources */,
 				971487DE227B7A8900570548 /* Order.cpp in Sources */,
 				97004E6C228B16A400805A22 /* Model.cpp in Sources */,
 				97004E71228B172100805A22 /* Schemas.cpp in Sources */,
 				971487D6227B6E5100570548 /* Fields.cpp in Sources */,
 				971487FF2281D32D00570548 /* MysqlConnector.cpp in Sources */,
-				971487C1227A2D9900570548 /* BuilderBase.cpp in Sources */,
+				971487C1227A2D9900570548 /* Builder.cpp in Sources */,
 				971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */,
 				971487F7227D6AF700570548 /* FieldDescriptor.cpp in Sources */,
-				971487AC227A285200570548 /* ConnectorBase.cpp in Sources */,
+				971487AC227A285200570548 /* Connector.cpp in Sources */,
 				97004E75228B27EF00805A22 /* AlterTableField.cpp in Sources */,
 				971487DA227B7A5800570548 /* Join.cpp in Sources */,
 			);

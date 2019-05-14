@@ -9,31 +9,34 @@
 #ifndef ResultSet_hpp
 #define ResultSet_hpp
 
-#include "../connectors/ConnectorBase.h"
-#include "Result.h"
+#include "Row.h"
 
 #include <libnrcore/memory/Ref.h>
 #include <libnrcore/memory/Array.h>
 
 namespace nrcore {
     
+    class Connector;
+    
     class ResultSet {
     public:
-        ResultSet(ConnectorBase *con, Array<String> columns);
+        ResultSet(Connector *con, Array<String> columns);
         virtual ~ResultSet();
         
         void addRow(Array<Memory> fields);
-        Result row(unsigned int offset);
-        Result first();
-        Result last();
-        Result next();
+        Row row(unsigned int offset);
+        Row first();
+        Row last();
+        Row next();
         
         int getColumnIndex(String name);
         
+        size_t length();
+        
     protected:
-        ConnectorBase *con;
+        Connector *con;
         Array<String> columns;
-        Array< Ref<Result> > rows;
+        Array< Ref<Row> > rows;
         
         unsigned int cursor_offset;
         

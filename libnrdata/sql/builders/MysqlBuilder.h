@@ -12,11 +12,11 @@
 #include <stdio.h>
 #include <mysql.h>
 
-#include "BuilderBase.h"
+#include "Builder.h"
 
 namespace nrcore {
     
-    class MysqlBuilder : public BuilderBase {
+    class MysqlBuilder : public Builder {
     public:
         MysqlBuilder(MYSQL *mysql, String name);
         MysqlBuilder(const MysqlBuilder& gen);

@@ -25,7 +25,7 @@
 
 namespace nrcore {
     
-    class BuilderBase {
+    class Builder {
     public:
         typedef enum {
             SELECT,
@@ -37,9 +37,9 @@ namespace nrcore {
             DROP
         } TYPE;
     public:
-        BuilderBase(String table);
-        BuilderBase(const BuilderBase& genbase);
-        virtual ~BuilderBase();
+        Builder(String table);
+        Builder(const Builder& genbase);
+        virtual ~Builder();
         
         virtual String escape(String str) = 0;
         virtual String sql(TYPE type) = 0;

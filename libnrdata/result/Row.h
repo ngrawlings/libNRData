@@ -13,17 +13,15 @@
 #include <libnrcore/memory/Memory.h>
 #include <libnrcore/memory/String.h>
 
-#include "../connectors/ConnectorBase.h"
-
 namespace nrcore {
     
     class ResultSet;
     
-    class Result {
+    class Row {
     public:
-        Result(ResultSet *result_set, Array<Memory> values);
-        Result(const Result &result);
-        virtual ~Result();
+        Row(ResultSet *result_set, Array<Memory> values);
+        Row(const Row &result);
+        virtual ~Row();
         
         String getString(int index);
         String getString(String name);

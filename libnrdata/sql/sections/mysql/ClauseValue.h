@@ -14,10 +14,11 @@
 
 namespace nrcore {
     
-    class BuilderBase;
+    class Builder;
     
     class ClauseValue : public Clause {
-        ClauseValue(BuilderBase *gb, String f1, String comparitor, String f2);
+    public:
+        ClauseValue(Builder *gb, String f1, String comparitor, String f2);
         ClauseValue(Value f1, String comparitor, Value f2);
         ClauseValue(const ClauseValue &clause);
         virtual ~ClauseValue();

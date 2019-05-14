@@ -6,15 +6,15 @@
 //  Copyright © 2019 Liquidsoft Studio. All rights reserved.
 //
 
-#include "BuilderBase.h"
+#include "Builder.h"
 
 namespace nrcore {
  
-    BuilderBase::BuilderBase(String table) : table(table) {
+    Builder::Builder(String table) : table(table) {
         
     }
     
-    BuilderBase::BuilderBase(const BuilderBase& genbase) {
+    Builder::Builder(const Builder& genbase) {
         table               = genbase.table;
         fields              = genbase.fields;
         joins               = genbase.joins;
@@ -30,11 +30,11 @@ namespace nrcore {
         collate             = genbase.collate;
     }
     
-    BuilderBase::~BuilderBase() {
+    Builder::~Builder() {
         
     }
     
-    String BuilderBase::getJoins() {
+    String Builder::getJoins() {
         String ret;
         
         int len = (int)this->joins.length();
@@ -48,63 +48,63 @@ namespace nrcore {
         return ret;
     }
     
-    void BuilderBase::select(String field) {
+    void Builder::select(String field) {
         fields.addField(escape(field));
     }
     
-    void BuilderBase::join(String table, Ref<Clause> clause) {
+    void Builder::join(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause)));
     }
     
-    void BuilderBase::leftJoin(String table, Ref<Clause> clause) {
+    void Builder::leftJoin(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause, "LEFT")));
     }
     
-    void BuilderBase::rightJoin(String table, Ref<Clause> clause) {
+    void Builder::rightJoin(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause, "RIGHT")));
     }
                            
-    void BuilderBase::outerJoin(String table, Ref<Clause> clause) {
+    void Builder::outerJoin(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause, "OUTER")));
     }
     
-    void BuilderBase::value(String name, String value) {
+    void Builder::value(String name, String value) {
         values.add(escape(name), escape(value));
     }
     
-    void BuilderBase::setClause(Ref<Clause> clause) {
+    void Builder::setClause(Ref<Clause> clause) {
         this->clause = clause;
     }
     
-    void BuilderBase::order(String field, Order::DIRECTION direction) {
+    void Builder::order(String field, Order::DIRECTION direction) {
         _order.add(escape(field), direction);
     }
     
-    void BuilderBase::group(String field) {
+    void Builder::group(String field) {
         _group.addField(escape(field));
     }
     
-    void BuilderBase::offset(long long offset) {
+    void Builder::offset(long long offset) {
         offset_limit.offset(offset);
     }
     
-    void BuilderBase::limit(int limit) {
+    void Builder::limit(int limit) {
         offset_limit.limit(limit);
     }
     
-    void BuilderBase::fieldDescriptor(Ref<FieldDescriptor> fd) {
+    void Builder::fieldDescriptor(Ref<FieldDescriptor> fd) {
         field_descriptors.push(fd);
     }
     
-    void BuilderBase::setEngine(String engine) {
+    void Builder::setEngine(String engine) {
         this->engine = escape(engine);
     }
     
-    void BuilderBase::setCharset(String charset) {
+    void Builder::setCharset(String charset) {
         this->charset = escape(charset);
     }
     
-    void BuilderBase::setCollate(String collate) {
+    void Builder::setCollate(String collate) {
         this->collate = escape(collate);
     }
     

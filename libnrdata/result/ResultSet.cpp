@@ -11,7 +11,7 @@
 
 namespace nrcore {
     
-    ResultSet::ResultSet(ConnectorBase *con, Array<String> columns) : con(con), columns(columns) {
+    ResultSet::ResultSet(Connector *con, Array<String> columns) : con(con), columns(columns) {
         cursor_offset = 0;
     }
     
@@ -23,24 +23,24 @@ namespace nrcore {
         if (fields.length() != columns.length())
             throw Exception(-1, "Column count mis-match");
         
-        rows.push(Ref<Result>(new Result(this, fields)));
+        rows.push(Ref<Row>(new Row(this, fields)));
     }
     
-    Result ResultSet::row(unsigned int offset) {
+    Row ResultSet::row(unsigned int offset) {
         return rows[offset];
     }
     
-    Result ResultSet::first() {
+    Row ResultSet::first() {
         cursor_offset = 0;
         return rows[0];
     }
     
-    Result ResultSet::last() {
+    Row ResultSet::last() {
         cursor_offset = (unsigned int)rows.length()-1;
         return rows[cursor_offset];
     }
     
-    Result ResultSet::next() {
+    Row ResultSet::next() {
         return rows[cursor_offset++];
     }
     
@@ -51,6 +51,10 @@ namespace nrcore {
                 return i;
         }
         return -1;
+    }
+    
+    size_t ResultSet::length() {
+        return rows.length();
     }
     
 }
