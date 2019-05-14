@@ -9,7 +9,7 @@
 #ifndef ConnectorBase_hpp
 #define ConnectorBase_hpp
 
-#include <libnrdata/sql/generators/GeneratorBase.h>
+#include <libnrdata/sql/builders/BuilderBase.h>
 
 
 namespace nrcore {
@@ -22,7 +22,7 @@ namespace nrcore {
         void getConnection(void* connection);
         void* getConnection();
         
-        //void* getConnection();
+        virtual Ref<BuilderBase> getBuilder(String table) = 0;
         
     protected:
         void *connection_instance;

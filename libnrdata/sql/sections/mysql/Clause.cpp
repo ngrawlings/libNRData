@@ -7,11 +7,11 @@
 //
 
 #include "Clause.h"
-#include "../../generators/GeneratorBase.h"
+#include "../../builders/BuilderBase.h"
 
 namespace nrcore {
 
-    Clause::Value::Value(GeneratorBase *gb, TYPE type, String value) {
+    Clause::Value::Value(BuilderBase *gb, TYPE type, String value) {
         _type = type;
         _value = gb->escape(value);
     }

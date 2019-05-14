@@ -100,11 +100,11 @@ namespace nrcore {
         void setCollation(String collation);
         void setComment(String comment);
         
-        void setIndex(INDEX_TYPE type, String name);
+        void setIndex(INDEX_TYPE type);
         
         String getTypeString();
         
-        String toString();
+        virtual String toString();
         String getIndex();
         
     protected:

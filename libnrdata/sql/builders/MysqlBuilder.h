@@ -12,15 +12,15 @@
 #include <stdio.h>
 #include <mysql.h>
 
-#include "GeneratorBase.h"
+#include "BuilderBase.h"
 
 namespace nrcore {
     
-    class MysqlGenerator : public GeneratorBase {
+    class MysqlBuilder : public BuilderBase {
     public:
-        MysqlGenerator(MYSQL *mysql, String name);
-        MysqlGenerator(const MysqlGenerator& gen);
-        virtual ~MysqlGenerator();
+        MysqlBuilder(MYSQL *mysql, String name);
+        MysqlBuilder(const MysqlBuilder& gen);
+        virtual ~MysqlBuilder();
         
         String escape(String str);
         String sql(TYPE type);
@@ -31,6 +31,7 @@ namespace nrcore {
         String update();
         String _delete();
         String create();
+        String alter();
         String drop();
         
     private:

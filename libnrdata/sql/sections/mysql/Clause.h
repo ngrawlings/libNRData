@@ -14,7 +14,7 @@
 
 namespace nrcore {
     
-    class GeneratorBase;
+    class BuilderBase;
     
     class Clause {
     public:
@@ -26,7 +26,7 @@ namespace nrcore {
         
         class Value {
         public:
-            Value(GeneratorBase *gb, TYPE type, String value);
+            Value(BuilderBase *gb, TYPE type, String value);
             Value(const Value &value);
             virtual ~Value();
             

@@ -6,26 +6,26 @@
 //  Copyright © 2019 Liquidsoft Studio. All rights reserved.
 //
 
-#include "MysqlGenerator.h"
+#include "MysqlBuilder.h"
 
 #include <libnrcore/exception/Exception.h>
 
 
 namespace nrcore {
     
-    MysqlGenerator::MysqlGenerator(MYSQL *mysql, String name) : GeneratorBase(name), mysql(mysql) {
+    MysqlBuilder::MysqlBuilder(MYSQL *mysql, String name) : BuilderBase(name), mysql(mysql) {
         
     }
     
-    MysqlGenerator::MysqlGenerator(const MysqlGenerator& gen) : GeneratorBase(gen), mysql(gen.mysql) {
+    MysqlBuilder::MysqlBuilder(const MysqlBuilder& gen) : BuilderBase(gen), mysql(gen.mysql) {
         
     }
     
-    MysqlGenerator::~MysqlGenerator() {
+    MysqlBuilder::~MysqlBuilder() {
         
     }
     
-    String MysqlGenerator::escape(String str) {
+    String MysqlBuilder::escape(String str) {
         char *to = new char[(str.length()*2)+1];
         unsigned long len = mysql_real_escape_string(mysql, to, str.operator char *(), str.length());
         
@@ -35,7 +35,7 @@ namespace nrcore {
         return ret;
     }
     
-    String MysqlGenerator::sql(TYPE type) {
+    String MysqlBuilder::sql(TYPE type) {
         switch(type) {
             case SELECT:
                 return select();
@@ -52,6 +52,9 @@ namespace nrcore {
             case CREATE:
                 return create();
                 
+            case ALTER:
+                
+                
             case DROP:
                 return drop();
         }
@@ -59,7 +62,7 @@ namespace nrcore {
         throw Exception(-1,  "Reached non executable point");
     }
     
-    String MysqlGenerator::select() {
+    String MysqlBuilder::select() {
         String fields = this->fields.toString();
         String joins = this->getJoins();
         String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
@@ -87,7 +90,7 @@ namespace nrcore {
         return sql;
     }
     
-    String MysqlGenerator::insert() {
+    String MysqlBuilder::insert() {
         String fields = this->values.getFields();
         String values = this->values.getValues();
         String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
@@ -100,7 +103,7 @@ namespace nrcore {
         return sql;
     }
     
-    String MysqlGenerator::update() {
+    String MysqlBuilder::update() {
         String values = this->values.toString();
         String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
         String limit = this->offset_limit.toString();
@@ -116,12 +119,12 @@ namespace nrcore {
         return sql;
     }
     
-    String MysqlGenerator::_delete() {
+    String MysqlBuilder::_delete() {
         String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
         return String("DELETE FROM `%` WHERE %;").arg(table).arg(where);
     }
     
-    String MysqlGenerator::create() {
+    String MysqlBuilder::create() {
         int len = (int)field_descriptors.length();
         if (len) {
             String fields = field_descriptors[0].getPtr()->toString();
@@ -142,7 +145,21 @@ namespace nrcore {
         throw Exception(-1, "No field descriptors");
     }
     
-    String MysqlGenerator::drop() {
+    String MysqlBuilder::alter() {
+        int len = (int)field_descriptors.length();
+        if (len) {
+            String fields = field_descriptors[0].getPtr()->toString();
+ 
+            for (int i=1; i<len; i++)
+                fields += String(", ")+field_descriptors[i].getPtr()->toString();
+            
+           return String("ALTER TABLE `%` %;").arg(table).arg(fields);
+        }
+        
+        throw Exception(-1, "No field descriptors");
+    }
+    
+    String MysqlBuilder::drop() {
         return String("DROP TABLE `%`;").arg(table);
     }
     

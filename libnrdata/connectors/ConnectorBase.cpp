@@ -7,6 +7,7 @@
 //
 
 #include "ConnectorBase.h"
+#include <libnrdata/sql/builders/BuilderBase.h>
 
 namespace nrcore {
     

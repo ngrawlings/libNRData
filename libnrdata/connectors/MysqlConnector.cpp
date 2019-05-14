@@ -9,6 +9,7 @@
 #include "MysqlConnector.h"
 
 #include <libnrcore/exception/Exception.h>
+#include <libnrdata/sql//builders/MysqlBuilder.h>
 
 namespace nrcore {
     
@@ -63,6 +64,10 @@ namespace nrcore {
         
         mysql_free_result(result);
         return res;
+    }
+    
+    Ref<BuilderBase> MysqlConnector::getBuilder(String table) {
+        return Ref<BuilderBase>(new MysqlBuilder(con, table));
     }
     
 }

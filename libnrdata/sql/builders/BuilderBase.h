@@ -25,7 +25,7 @@
 
 namespace nrcore {
     
-    class GeneratorBase {
+    class BuilderBase {
     public:
         typedef enum {
             SELECT,
@@ -33,12 +33,13 @@ namespace nrcore {
             UPDATE,
             DELETE,
             CREATE,
+            ALTER,
             DROP
         } TYPE;
     public:
-        GeneratorBase(String table);
-        GeneratorBase(const GeneratorBase& genbase);
-        virtual ~GeneratorBase();
+        BuilderBase(String table);
+        BuilderBase(const BuilderBase& genbase);
+        virtual ~BuilderBase();
         
         virtual String escape(String str) = 0;
         virtual String sql(TYPE type) = 0;

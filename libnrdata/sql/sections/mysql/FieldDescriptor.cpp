@@ -146,7 +146,7 @@ namespace nrcore {
         this->comment = comment;
     }
     
-    void FieldDescriptor::setIndex(INDEX_TYPE type, String name) {
+    void FieldDescriptor::setIndex(INDEX_TYPE type) {
         _INDEX *idx = new _INDEX;
         idx->type = type;
         idx->name = name;
@@ -253,7 +253,7 @@ namespace nrcore {
         String ret = String("`%` %").arg(name).arg(getTypeString());
         
         if (parameter.length())
-            ret = String("%(%)").arg(ret).arg(parameter);
+            ret = String(ret+"(%)").arg(parameter);
         
         if (_unsigned)
             ret += " unsigned";

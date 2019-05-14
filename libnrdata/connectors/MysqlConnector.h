@@ -11,7 +11,7 @@
 
 #include <stdio.h>
 #include "ConnectorBase.h"
-#include <libnrdata/sql/generators/MysqlGenerator.h>
+#include <libnrdata/sql/builders/MysqlBuilder.h>
 
 #include <mysql.h>
 
@@ -30,6 +30,8 @@ namespace nrcore {
         
         void execute(String sql);
         ResultSet query(String sql);
+        
+        Ref<BuilderBase> getBuilder(String table);
         
     protected:
         MYSQL *con;

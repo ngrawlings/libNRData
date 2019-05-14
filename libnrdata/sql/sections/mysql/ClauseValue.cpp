@@ -10,7 +10,7 @@
 
 namespace nrcore {
 
-    ClauseValue::ClauseValue(GeneratorBase *gb, String f1, String comparitor, String f2) :
+    ClauseValue::ClauseValue(BuilderBase *gb, String f1, String comparitor, String f2) :
         field1(Value(gb, STRING, f1)), comparitor(comparitor), field2(Value(gb, STRING, f2)) {
             _operator = String("AND");
     }
