@@ -74,6 +74,22 @@ namespace nrcore {
         }
     }
     
+    FieldDescriptor::FieldDescriptor(const FieldDescriptor& fd) {
+        name        = fd.name;
+        type        = fd.type;
+        parameter   = fd.parameter;
+        _unsigned   = fd._unsigned;
+        zerofill    = fd.zerofill;
+        binary      = fd.binary;
+        notnull     = fd.notnull;
+        _default    = fd._default;
+        extra       = fd.extra;
+        encoding    = fd.encoding;
+        collation   = fd.collation;
+        comment     = fd.comment;
+        index       = fd.index;
+    }
+    
     FieldDescriptor::~FieldDescriptor() {
         
     }

@@ -12,13 +12,13 @@
 
 namespace nrcore {
     
-    MysqlConnector::MysqlConnector(String host, int port, String username, String password) {
+    MysqlConnector::MysqlConnector(const char* host, int port, const char* username, const char* password, const char* database) {
         con = mysql_init(NULL);
         
         if (con == NULL)
             throw Exception(-1, mysql_error(con));
         
-        if (mysql_real_connect(con, host, username, password, NULL, port, NULL, 0) == NULL)
+        if (mysql_real_connect(con, host, username, password, database, port, NULL, 0) == NULL)
             throw Exception(-1, mysql_error(con));
     }
     
@@ -27,7 +27,8 @@ namespace nrcore {
     }
     
     void MysqlConnector::execute(String sql) {
-        
+        if (!mysql_query(con, sql))
+            throw Exception(-1, mysql_error(con));
     }
     
     ResultSet MysqlConnector::query(String sql) {

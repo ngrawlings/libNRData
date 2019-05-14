@@ -14,6 +14,10 @@ namespace nrcore {
         
     }
     
+    Order::Order(const Order &order) {
+        orders = order.orders;
+    }
+    
     Order::~Order() {
         
     }

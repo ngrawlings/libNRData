@@ -26,15 +26,18 @@ namespace nrcore {
         virtual ~Result();
         
         String getString(int index);
-        int getInteger(int index);
-        unsigned long getUnsignedInteger(int index);
-        double getDouble(int index);
-        Memory getBlob(int index);
-        
         String getString(String name);
+        
+        int getInteger(int index);
         int getInteger(String name);
+        
+        unsigned long getUnsignedInteger(int index);
         unsigned long getUnsignedInteger(String name);
+        
+        double getDouble(int index);
         double getDouble(String name);
+        
+        Memory getBlob(int index);
         Memory getBlob(String name);
         
     protected:

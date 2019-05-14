@@ -43,6 +43,7 @@ namespace nrcore {
         
     public:
         Clause(String _operator="AND");
+        Clause(const Clause& clause);
         virtual ~Clause();
         
         String getOperator();

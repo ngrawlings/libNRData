@@ -25,7 +25,7 @@ namespace nrcore {
     
     class MysqlConnector : public ConnectorBase {
     public:
-        MysqlConnector(String host, int port, String username, String password);
+        MysqlConnector(const char* host, int port, const char* username, const char* password, const char* database);
         virtual ~MysqlConnector();
         
         void execute(String sql);

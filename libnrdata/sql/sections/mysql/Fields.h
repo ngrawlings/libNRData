@@ -18,6 +18,7 @@ namespace nrcore {
     class Fields {
     public:
         Fields();
+        Fields(const Fields& fields);
         virtual ~Fields();
         
         void addField(String field);

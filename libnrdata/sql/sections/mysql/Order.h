@@ -25,6 +25,7 @@ namespace nrcore {
         
     public:
         Order();
+        Order(const Order &order);
         virtual ~Order();
         
         void add(String field, DIRECTION direction);

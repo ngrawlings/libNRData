@@ -14,6 +14,10 @@ namespace nrcore {
         
     }
     
+    Values::Values(const Values& values) {
+        this->values = values.values;
+    }
+    
     Values::~Values() {
         
     }

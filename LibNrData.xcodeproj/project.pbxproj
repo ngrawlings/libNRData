@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		971487A3227A27BE00570548 /* Database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487A1227A27BE00570548 /* Database.cpp */; };
-		971487A4227A27BE00570548 /* Database.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487A2227A27BE00570548 /* Database.h */; };
-		971487A7227A27E200570548 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487A5227A27E200570548 /* Model.cpp */; };
-		971487A8227A27E200570548 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487A6227A27E200570548 /* Model.h */; };
+		97004E4B228ADD6A00805A22 /* libnrdata.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97148799227A267E00570548 /* libnrdata.a */; };
+		97004E4C228ADD6C00805A22 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 971487B3227A2C0F00570548 /* libmysqlclient.a */; };
+		97004E4F228AE20800805A22 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97004E4E228AE20800805A22 /* main.cpp */; };
+		97004E55228AEADA00805A22 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97004E51228AEADA00805A22 /* libssl.a */; };
+		97004E57228AEADA00805A22 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97004E53228AEADA00805A22 /* libcrypto.a */; };
+		97004E59228AEB2100805A22 /* libnrcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97004E58228AEB2100805A22 /* libnrcore.a */; };
 		971487AC227A285200570548 /* ConnectorBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AA227A285200570548 /* ConnectorBase.cpp */; };
 		971487AD227A285200570548 /* ConnectorBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AB227A285200570548 /* ConnectorBase.h */; };
 		971487B4227A2C0F00570548 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 971487B3227A2C0F00570548 /* libmysqlclient.a */; };
@@ -46,12 +48,25 @@
 		971488062282007F00570548 /* GeneratorFactory.h in Headers */ = {isa = PBXBuildFile; fileRef = 971488042282007F00570548 /* GeneratorFactory.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		97004E42228ADD5A00805A22 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		97004E44228ADD5A00805A22 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		97004E4E228AE20800805A22 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		97004E51228AEADA00805A22 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../usr/local/Cellar/openssl/1.0.2r/lib/libssl.a; sourceTree = "<group>"; };
+		97004E53228AEADA00805A22 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../usr/local/Cellar/openssl/1.0.2r/lib/libcrypto.a; sourceTree = "<group>"; };
+		97004E58228AEB2100805A22 /* libnrcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnrcore.a; path = ../../../../../usr/local/lib/libnrcore.a; sourceTree = "<group>"; };
 		97148799227A267E00570548 /* libnrdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libnrdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		971487A1227A27BE00570548 /* Database.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Database.cpp; sourceTree = "<group>"; };
-		971487A2227A27BE00570548 /* Database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Database.h; sourceTree = "<group>"; };
-		971487A5227A27E200570548 /* Model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
-		971487A6227A27E200570548 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		971487AA227A285200570548 /* ConnectorBase.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ConnectorBase.cpp; sourceTree = "<group>"; };
 		971487AB227A285200570548 /* ConnectorBase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConnectorBase.h; sourceTree = "<group>"; };
 		971487B3227A2C0F00570548 /* libmysqlclient.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libmysqlclient.a; path = "../../../../../usr/local/Cellar/mysql-connector-c/6.1.11/lib/libmysqlclient.a"; sourceTree = "<group>"; };
@@ -88,6 +103,18 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		97004E41228ADD5A00805A22 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97004E59228AEB2100805A22 /* libnrcore.a in Frameworks */,
+				97004E55228AEADA00805A22 /* libssl.a in Frameworks */,
+				97004E57228AEADA00805A22 /* libcrypto.a in Frameworks */,
+				97004E4B228ADD6A00805A22 /* libnrdata.a in Frameworks */,
+				97004E4C228ADD6C00805A22 /* libmysqlclient.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97148797227A267E00570548 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -99,10 +126,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97004E4D228AE1C700805A22 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				97004E4E228AE20800805A22 /* main.cpp */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		97148790227A267E00570548 = {
 			isa = PBXGroup;
 			children = (
 				971487A0227A268700570548 /* libnrdata */,
+				97004E4D228AE1C700805A22 /* Tests */,
 				9714879A227A267E00570548 /* Products */,
 				971487B2227A2C0F00570548 /* Frameworks */,
 			);
@@ -112,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				97148799227A267E00570548 /* libnrdata.a */,
+				97004E44228ADD5A00805A22 /* Tests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -122,10 +159,6 @@
 				971487BE227A2D8D00570548 /* sql */,
 				971487B9227A2CFD00570548 /* result */,
 				971487A9227A283800570548 /* connectors */,
-				971487A2227A27BE00570548 /* Database.h */,
-				971487A1227A27BE00570548 /* Database.cpp */,
-				971487A6227A27E200570548 /* Model.h */,
-				971487A5227A27E200570548 /* Model.cpp */,
 			);
 			path = libnrdata;
 			sourceTree = "<group>";
@@ -144,6 +177,9 @@
 		971487B2227A2C0F00570548 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				97004E58228AEB2100805A22 /* libnrcore.a */,
+				97004E53228AEADA00805A22 /* libcrypto.a */,
+				97004E51228AEADA00805A22 /* libssl.a */,
 				971487B3227A2C0F00570548 /* libmysqlclient.a */,
 			);
 			name = Frameworks;
@@ -222,7 +258,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				971487A8227A27E200570548 /* Model.h in Headers */,
 				971487C2227A2D9900570548 /* GeneratorBase.h in Headers */,
 				971487B8227A2CAD00570548 /* ResultSet.h in Headers */,
 				971487CA227A38E800570548 /* Clause.h in Headers */,
@@ -238,7 +273,6 @@
 				971487DF227B7A8900570548 /* Order.h in Headers */,
 				971487E7227CBA6800570548 /* Values.h in Headers */,
 				971488062282007F00570548 /* GeneratorFactory.h in Headers */,
-				971487A4227A27BE00570548 /* Database.h in Headers */,
 				971487AD227A285200570548 /* ConnectorBase.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -246,6 +280,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		97004E43228ADD5A00805A22 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97004E48228ADD5B00805A22 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				97004E40228ADD5A00805A22 /* Sources */,
+				97004E41228ADD5A00805A22 /* Frameworks */,
+				97004E42228ADD5A00805A22 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 97004E44228ADD5A00805A22 /* Tests */;
+			productType = "com.apple.product-type.tool";
+		};
 		97148798227A267E00570548 /* LibNrData */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9714879D227A267E00570548 /* Build configuration list for PBXNativeTarget "LibNrData" */;
@@ -269,9 +320,13 @@
 		97148791227A267E00570548 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Liquidsoft Studio";
 				TargetAttributes = {
+					97004E43228ADD5A00805A22 = {
+						CreatedOnToolsVersion = 10.2.1;
+					};
 					97148798227A267E00570548 = {
 						CreatedOnToolsVersion = 10.2.1;
 					};
@@ -290,11 +345,20 @@
 			projectRoot = "";
 			targets = (
 				97148798227A267E00570548 /* LibNrData */,
+				97004E43228ADD5A00805A22 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		97004E40228ADD5A00805A22 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97004E4F228AE20800805A22 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		97148796227A267E00570548 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,10 +374,8 @@
 				971487DE227B7A8900570548 /* Order.cpp in Sources */,
 				971487D6227B6E5100570548 /* Fields.cpp in Sources */,
 				971487FF2281D32D00570548 /* MysqlConnector.cpp in Sources */,
-				971487A3227A27BE00570548 /* Database.cpp in Sources */,
 				971487C1227A2D9900570548 /* GeneratorBase.cpp in Sources */,
 				971487D2227A438A00570548 /* ClauseGroup.cpp in Sources */,
-				971487A7227A27E200570548 /* Model.cpp in Sources */,
 				971487F7227D6AF700570548 /* FieldDescriptor.cpp in Sources */,
 				971487AC227A285200570548 /* ConnectorBase.cpp in Sources */,
 				971487DA227B7A5800570548 /* Join.cpp in Sources */,
@@ -323,6 +385,46 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		97004E49228ADD5B00805A22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MASABRRSM;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/usr/local/include,
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",
+					/usr/local/Cellar/openssl/1.0.2r/lib,
+					/usr/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		97004E4A228ADD5B00805A22 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MASABRRSM;
+				HEADER_SEARCH_PATHS = (
+					"$(SRCROOT)",
+					/usr/local/include,
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",
+					/usr/local/Cellar/openssl/1.0.2r/lib,
+					/usr/local/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		9714879B227A267E00570548 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -477,6 +579,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		97004E48228ADD5B00805A22 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97004E49228ADD5B00805A22 /* Debug */,
+				97004E4A228ADD5B00805A22 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		97148794227A267E00570548 /* Build configuration list for PBXProject "LibNrData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

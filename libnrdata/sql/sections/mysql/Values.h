@@ -19,6 +19,7 @@ namespace nrcore {
     class Values {
     public:
         Values();
+        Values(const Values& values);
         virtual ~Values();
         
         void add(String field, String value);

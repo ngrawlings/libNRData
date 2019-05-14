@@ -25,6 +25,11 @@ namespace nrcore {
         _limit = limit;
     }
     
+    OffsetLimit::OffsetLimit(const OffsetLimit &ol) {
+        _offset = ol._offset;
+        _limit = ol._limit;
+    }
+    
     OffsetLimit::~OffsetLimit() {
         
     }

@@ -19,6 +19,7 @@ namespace nrcore {
     class MysqlGenerator : public GeneratorBase {
     public:
         MysqlGenerator(MYSQL *mysql, String name);
+        MysqlGenerator(const MysqlGenerator& gen);
         virtual ~MysqlGenerator();
         
         String escape(String str);

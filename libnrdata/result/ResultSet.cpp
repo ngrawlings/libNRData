@@ -26,8 +26,22 @@ namespace nrcore {
         rows.push(Ref<Result>(new Result(this, fields)));
     }
     
-    Result ResultSet::row() {
-        return Result(this, Array<Memory>());
+    Result ResultSet::row(unsigned int offset) {
+        return rows[offset];
+    }
+    
+    Result ResultSet::first() {
+        cursor_offset = 0;
+        return rows[0];
+    }
+    
+    Result ResultSet::last() {
+        cursor_offset = (unsigned int)rows.length()-1;
+        return rows[cursor_offset];
+    }
+    
+    Result ResultSet::next() {
+        return rows[cursor_offset++];
     }
     
     int ResultSet::getColumnIndex(String name) {

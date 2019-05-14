@@ -48,6 +48,10 @@ namespace nrcore {
         this->_operator = _operator;
     }
     
+    Clause::Clause(const Clause& clause) {
+        _operator = clause._operator;
+    }
+    
     Clause::~Clause() {
         
     }

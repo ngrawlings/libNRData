@@ -14,6 +14,22 @@ namespace nrcore {
         
     }
     
+    GeneratorBase::GeneratorBase(const GeneratorBase& genbase) {
+        table               = genbase.table;
+        fields              = genbase.fields;
+        joins               = genbase.joins;
+        values              = genbase.values;
+        clause              = genbase.clause;
+        _order              = genbase._order;
+        _group              = genbase._group;
+        offset_limit        = genbase.offset_limit;
+        
+        field_descriptors   = genbase.field_descriptors;
+        engine              = genbase.engine;
+        charset             = genbase.charset;
+        collate             = genbase.collate;
+    }
+    
     GeneratorBase::~GeneratorBase() {
         
     }

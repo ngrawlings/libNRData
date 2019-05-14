@@ -80,6 +80,7 @@ namespace nrcore {
         
     public:
         FieldDescriptor(String name, TYPE type);
+        FieldDescriptor(const FieldDescriptor& fd);
         virtual ~FieldDescriptor();
         
         void setParameter(String param);

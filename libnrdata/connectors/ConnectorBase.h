@@ -9,7 +9,8 @@
 #ifndef ConnectorBase_hpp
 #define ConnectorBase_hpp
 
-#include <stdio.h>
+#include <libnrdata/sql/generators/GeneratorBase.h>
+
 
 namespace nrcore {
     
@@ -20,6 +21,8 @@ namespace nrcore {
         
         void getConnection(void* connection);
         void* getConnection();
+        
+        //void* getConnection();
         
     protected:
         void *connection_instance;

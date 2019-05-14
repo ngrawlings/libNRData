@@ -17,6 +17,10 @@ namespace nrcore {
         
     }
     
+    MysqlGenerator::MysqlGenerator(const MysqlGenerator& gen) : GeneratorBase(gen), mysql(gen.mysql) {
+        
+    }
+    
     MysqlGenerator::~MysqlGenerator() {
         
     }

@@ -23,7 +23,10 @@ namespace nrcore {
         virtual ~ResultSet();
         
         void addRow(Array<Memory> fields);
-        Result row();
+        Result row(unsigned int offset);
+        Result first();
+        Result last();
+        Result next();
         
         int getColumnIndex(String name);
         
@@ -32,7 +35,7 @@ namespace nrcore {
         Array<String> columns;
         Array< Ref<Result> > rows;
         
-        unsigned long cursor_offset;
+        unsigned int cursor_offset;
         
     };
     

@@ -21,6 +21,7 @@ namespace nrcore {
         OffsetLimit();
         OffsetLimit(int limit);
         OffsetLimit(long long offset, int limit);
+        OffsetLimit(const OffsetLimit &ol);
         virtual ~OffsetLimit();
         
         void offset(long long offset);

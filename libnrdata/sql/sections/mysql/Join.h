@@ -19,6 +19,7 @@ namespace nrcore {
     class Join {
     public:
         Join(String table, Ref<Clause> clause, String type = "INNER");
+        Join(const Join& join);
         virtual ~Join();
         
         String toString();

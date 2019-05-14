@@ -37,6 +37,7 @@ namespace nrcore {
         } TYPE;
     public:
         GeneratorBase(String table);
+        GeneratorBase(const GeneratorBase& genbase);
         virtual ~GeneratorBase();
         
         virtual String escape(String str) = 0;

@@ -14,6 +14,10 @@ namespace nrcore {
         
     }
     
+    Fields::Fields(const Fields& fields) : fields(fields.fields) {
+        
+    }
+    
     Fields::~Fields() {
         
     }

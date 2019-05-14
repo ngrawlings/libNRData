@@ -14,6 +14,12 @@ namespace nrcore {
         
     }
     
+    Join::Join(const Join& join) {
+        type = join.type;
+        table = join.table;
+        clause = join.clause;
+    }
+    
     Join::~Join() {
         
     }
