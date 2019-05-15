@@ -52,7 +52,7 @@ namespace nrcore {
     
     bool Schemas::exists() {
         try {
-            con->query(String("SELECT 1 FROM `schemas` LIMIT 1;"));
+            con->query(String("SELECT `id` FROM `schemas` LIMIT 1;"));
         } catch (Exception e) {
             return false;
         }

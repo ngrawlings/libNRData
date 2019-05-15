@@ -30,17 +30,18 @@ namespace nrcore {
     }
     
     void MysqlConnector::execute(String sql) {
-        if (!mysql_query(con, sql))
+        if (mysql_query(con, sql))
             throw Exception(-1, mysql_error(con));
     }
     
     ResultSet MysqlConnector::query(String sql) {
-        if (!mysql_query(con, sql))
-            throw Exception(-1, mysql_error(con));
+        if (mysql_query(con, sql))
+            throw Exception(mysql_errno(con), mysql_error(con));
+        
+        if (mysql_errno(con))
+            throw Exception(mysql_errno(con), mysql_error(con));
         
         MYSQL_RES *result = mysql_store_result(con);
-        if (!result)
-            throw Exception(-1, mysql_error(con));
         
         int num_fields = mysql_num_fields(result);
         Array<String> columns;
@@ -68,6 +69,15 @@ namespace nrcore {
         
         mysql_free_result(result);
         return res;
+    }
+    
+    bool MysqlConnector::exists(String table) {
+        try {
+            query(String("SELECT 1 FROM `schemas` LIMIT 1;"));
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
     }
     
     Ref<Builder> MysqlConnector::getBuilder(String table) {

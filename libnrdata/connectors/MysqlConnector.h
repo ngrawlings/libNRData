@@ -28,10 +28,11 @@ namespace nrcore {
         MysqlConnector(const char* host, int port, const char* username, const char* password, const char* database);
         virtual ~MysqlConnector();
         
+        Ref<Builder> getBuilder(String table);
+        
         void execute(String sql);
         ResultSet query(String sql);
-        
-        Ref<Builder> getBuilder(String table);
+        bool exists(String table);
         
     protected:
         MYSQL *con;
