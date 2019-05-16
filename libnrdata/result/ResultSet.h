@@ -27,7 +27,7 @@ namespace nrcore {
         Row row(unsigned int offset);
         Row first();
         Row last();
-        Row next();
+        Row* next();
         
         int getColumnIndex(String name);
         

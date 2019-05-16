@@ -21,6 +21,7 @@ public:
     
     bool emailExists(String email);
     void insert(String email, String description);
+    Array<String> list();
     
 protected:
     int revision();

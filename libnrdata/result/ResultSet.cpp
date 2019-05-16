@@ -40,8 +40,11 @@ namespace nrcore {
         return rows[cursor_offset];
     }
     
-    Row ResultSet::next() {
-        return rows[cursor_offset++];
+    Row* ResultSet::next() {
+        if (cursor_offset<rows.length())
+            return rows[cursor_offset++].getPtr();
+
+        return 0;
     }
     
     int ResultSet::getColumnIndex(String name) {

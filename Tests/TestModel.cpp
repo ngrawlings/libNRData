@@ -34,6 +34,21 @@ void TestModel::insert(String email, String description) {
     con->execute(b->sql(Builder::INSERT));
 }
 
+Array<String> TestModel::list() {
+    Builder* b = getBuilder()->clear();
+    
+    b->select("id")->select("email");
+    ResultSet res = con->query(b->sql(Builder::SELECT));
+    
+    Array<String> ret;
+    
+    Row *row;
+    while ((row = res.next()))
+        ret.push(row->getString(1));
+    
+    return ret;
+}
+
 int TestModel::revision() {
     return 2;
 }

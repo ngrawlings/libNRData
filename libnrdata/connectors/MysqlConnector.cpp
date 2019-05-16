@@ -62,7 +62,7 @@ namespace nrcore {
             lengths = mysql_fetch_lengths(result);
             
             for(int i = 0; i < num_fields; i++)
-                row[i] = Memory(mysql_row[i], lengths[i]);
+                row[i] = Memory(mysql_row[i], lengths[i]+1);
             
             res.addRow(row);
         }

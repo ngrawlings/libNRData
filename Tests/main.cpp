@@ -23,6 +23,10 @@ int main(int argc, const char * argv[]) {
         if (!tm.emailExists("test@test.com"))
             tm.insert("test@test.com", "A simple test");
         
+        Array<String> emails = tm.list();
+        for (int i=0; i<emails.length(); i++)
+            printf("%s\n", emails[i].operator char *());
+        
     } catch (Exception e) {
         printf("%s\n", e.getMessage());
     }
