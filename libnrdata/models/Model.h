@@ -25,11 +25,15 @@ namespace nrcore {
         String table;
         int _revision;
         
+        Ref<Builder> builder;
+        
         virtual int revision() = 0;
         virtual bool migrate(int revision) = 0;
         
         void loadRevision();
         void runMigration();
+        
+        Builder* getBuilder();
     };
     
 }

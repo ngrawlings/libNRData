@@ -83,24 +83,24 @@ namespace nrcore {
         FieldDescriptor(const FieldDescriptor& fd);
         virtual ~FieldDescriptor();
         
-        void setParameter(String param);
-        void setUnsigned(bool val);
-        void setZeroFill(bool val);
-        void setBinary(bool val);
-        void notNull(bool val);
-        void setDefault(String _default);
+        FieldDescriptor& setParameter(String param);
+        FieldDescriptor& setUnsigned(bool val);
+        FieldDescriptor& setZeroFill(bool val);
+        FieldDescriptor& setBinary(bool val);
+        FieldDescriptor& notNull(bool val);
+        FieldDescriptor& setDefault(String _default);
         
-        void setExtra(String extra);
+        FieldDescriptor& setExtra(String extra);
         
-        void setAutoIncrement();
-        void setUpdateCurrentDate();
-        void setSerialDefaultValue();
+        FieldDescriptor& setAutoIncrement();
+        FieldDescriptor& setUpdateCurrentDate();
+        FieldDescriptor& setSerialDefaultValue();
         
-        void setEncoding(String encoding);
-        void setCollation(String collation);
-        void setComment(String comment);
+        FieldDescriptor& setEncoding(String encoding);
+        FieldDescriptor& setCollation(String collation);
+        FieldDescriptor& setComment(String comment);
         
-        void setIndex(INDEX_TYPE type);
+        FieldDescriptor& setIndex(INDEX_TYPE type);
         
         String getTypeString();
         

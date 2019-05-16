@@ -23,6 +23,7 @@ namespace nrcore {
         virtual ~Values();
         
         void add(String field, String value);
+        void clear();
         
         String toString();
         

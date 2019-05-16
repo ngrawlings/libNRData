@@ -21,6 +21,8 @@ namespace nrcore {
         Fields(const Fields& fields);
         virtual ~Fields();
         
+        void clear();
+        
         void addField(String field);
         
         String toString();

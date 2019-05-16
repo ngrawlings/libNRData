@@ -17,49 +17,49 @@ TestModel::~TestModel() {
     
 }
 
+bool TestModel::emailExists(String email) {
+    return false;
+}
+
+void TestModel::insert(String email, String description) {
+    
+}
+
 int TestModel::revision() {
     return 2;
 }
 
 bool TestModel::migrate(int revision) {
-    Ref<Builder> _mb = con->getBuilder("test_table");
-    Builder *mb = _mb.getPtr();
+    Builder* b = getBuilder()->clear();
     
     switch (revision) {
         case 1:
             {
                 FieldDescriptor f1("id", FieldDescriptor::INT);
-                f1.setUnsigned(true);
-                f1.setIndex(FieldDescriptor::PRIMARY);
-                f1.setAutoIncrement();
+                f1.setUnsigned(true).setIndex(FieldDescriptor::PRIMARY).setAutoIncrement();
                 
                 FieldDescriptor f2("email", FieldDescriptor::VARCHAR);
-                f2.setParameter("64");
-                f2.notNull(true);
+                f2.setParameter("64").notNull(true);
                 
-                mb->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f1)));
-                mb->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f2)));
-                mb->setEngine("InnoDB");
-                mb->setCharset("utf8mb4");
-                mb->setCollate("utf8mb4_0900_ai_ci");
+                b->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f1)));
+                b->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f2)));
+                b->setEngine("InnoDB").setCharset("utf8mb4").setCollate("utf8mb4_0900_ai_ci");
                 
-                con->execute(mb->sql(Builder::CREATE));
+                con->execute(b->sql(Builder::CREATE));
             }
             return true;
         
         case 2:
             {
                 AlterTableField f1("description", FieldDescriptor::VARCHAR);
-                f1.add();
-                f1.setParameter("64");
-                f1.notNull(true);
-                f1.afterColumn("email");
+                f1.add().afterColumn("email").setParameter("64").notNull(true);
                 
-                mb->fieldDescriptor(Ref<FieldDescriptor>(new AlterTableField(f1)));
+                b->fieldDescriptor(Ref<FieldDescriptor>(new AlterTableField(f1)));
                 
-                con->execute(mb->sql(Builder::ALTER));
+                con->execute(b->sql(Builder::ALTER));
             }
             return true;
+        
     }
     
     return false;

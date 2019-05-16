@@ -19,6 +19,9 @@ public:
     TestModel(Connector* con);
     virtual ~TestModel();
     
+    bool emailExists(String email);
+    void insert(String email, String description);
+    
 protected:
     int revision();
     bool migrate(int revision);

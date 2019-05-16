@@ -41,6 +41,8 @@ namespace nrcore {
         Builder(const Builder& genbase);
         virtual ~Builder();
         
+        Builder* clear();
+        
         virtual String escape(String str) = 0;
         virtual String sql(TYPE type) = 0;
         
@@ -63,9 +65,9 @@ namespace nrcore {
         
         void fieldDescriptor(Ref<FieldDescriptor> fd);
         
-        void setEngine(String engine);
-        void setCharset(String charset);
-        void setCollate(String collate);
+        Builder& setEngine(String engine);
+        Builder& setCharset(String charset);
+        Builder& setCollate(String collate);
         
     protected:
         String table;

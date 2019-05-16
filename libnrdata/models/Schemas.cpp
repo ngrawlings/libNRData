@@ -40,7 +40,7 @@ namespace nrcore {
         if (res.length())
             return res.row(0).getInteger(0);
         
-        return 0;
+        return -1;
     }
     
     void Schemas::setRevision(String table, int revision) {
@@ -52,7 +52,7 @@ namespace nrcore {
         b->value("revision", String("%").arg(revision));
         b->setClause(Ref<Clause>(new ClauseValue(b, "table", "=", table)));
         
-        if (_rev)
+        if (_rev != -1)
             con->execute(b->sql(Builder::UPDATE));
         else {
             b->value("table", String("%").arg(table));

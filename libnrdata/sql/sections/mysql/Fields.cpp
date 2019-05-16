@@ -22,6 +22,10 @@ namespace nrcore {
         
     }
     
+    void Fields::clear() {
+        fields.clear();
+    }
+    
     void Fields::addField(String field) {
         fields.push(field);
     }

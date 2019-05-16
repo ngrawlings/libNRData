@@ -72,6 +72,11 @@ namespace nrcore {
             default:
                 break;
         }
+        
+        _unsigned = false;
+        zerofill = false;
+        binary = false;
+        notnull = false;
     }
     
     FieldDescriptor::FieldDescriptor(const FieldDescriptor& fd) {
@@ -94,64 +99,78 @@ namespace nrcore {
         
     }
     
-    void FieldDescriptor::setParameter(String parameter) {
+    FieldDescriptor& FieldDescriptor::setParameter(String parameter) {
         this->parameter = parameter;
+        return *this;
     }
     
-    void FieldDescriptor::setUnsigned(bool val) {
+    FieldDescriptor& FieldDescriptor::setUnsigned(bool val) {
         this->_unsigned = val;
+        return *this;
     }
     
-    void FieldDescriptor::setZeroFill(bool val) {
+    FieldDescriptor& FieldDescriptor::setZeroFill(bool val) {
         this->zerofill = val;
+        return *this;
     }
     
-    void FieldDescriptor::setBinary(bool val) {
+    FieldDescriptor& FieldDescriptor::setBinary(bool val) {
         this->binary = val;
+        return *this;
     }
     
-    void FieldDescriptor::notNull(bool val) {
+    FieldDescriptor& FieldDescriptor::notNull(bool val) {
         this->notnull = val;
+        return *this;
     }
     
-    void FieldDescriptor::setDefault(String _default) {
+    FieldDescriptor& FieldDescriptor::setDefault(String _default) {
         this->_default = _default;
+        return *this;
     }
     
-    void FieldDescriptor::setExtra(String extra) {
+    FieldDescriptor& FieldDescriptor::setExtra(String extra) {
         this->extra = extra;
+        return *this;
     }
     
-    void FieldDescriptor::setAutoIncrement() {
+    FieldDescriptor& FieldDescriptor::setAutoIncrement() {
         this->extra = String("AUTO_INCREMENT");
+        return *this;
     }
     
-    void FieldDescriptor::setUpdateCurrentDate() {
+    FieldDescriptor& FieldDescriptor::setUpdateCurrentDate() {
         this->extra = String("on update CURRENT_TIMESTAMP");
+        return *this;
     }
     
-    void FieldDescriptor::setSerialDefaultValue() {
+    FieldDescriptor& FieldDescriptor::setSerialDefaultValue() {
         this->extra = String("on update CURRENT_TIMESTAMP");
+        return *this;
     }
     
-    void FieldDescriptor::setEncoding(String encoding) {
+    FieldDescriptor& FieldDescriptor::setEncoding(String encoding) {
         this->extra = String("SERIAL DEFAULT VALUE");
+        return *this;
     }
     
-    void FieldDescriptor::setCollation(String collation) {
+    FieldDescriptor& FieldDescriptor::setCollation(String collation) {
         this->collation = collation;
+        return *this;
     }
     
-    void FieldDescriptor::setComment(String comment) {
+    FieldDescriptor& FieldDescriptor::setComment(String comment) {
         this->comment = comment;
+        return *this;
     }
     
-    void FieldDescriptor::setIndex(INDEX_TYPE type) {
+    FieldDescriptor& FieldDescriptor::setIndex(INDEX_TYPE type) {
         _INDEX *idx = new _INDEX;
         idx->type = type;
         idx->name = name;
         
         this->index = Ref<_INDEX>(idx);
+        return *this;
     }
     
     String FieldDescriptor::getTypeString() {

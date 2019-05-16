@@ -18,21 +18,25 @@ namespace nrcore {
         
     }
     
-    void AlterTableField::add() {
+    AlterTableField& AlterTableField::add() {
         action = ADD;
+        return *this;
     }
     
-    void AlterTableField::drop() {
+    AlterTableField& AlterTableField::drop() {
         action = DROP;
+        return *this;
     }
     
-    void AlterTableField::change(String new_name) {
+    AlterTableField& AlterTableField::change(String new_name) {
         action = CHANGE;
         this->new_name = new_name;
+        return *this;
     }
     
-    void AlterTableField::afterColumn(String field) {
+    AlterTableField& AlterTableField::afterColumn(String field) {
         after_column = field;
+        return *this;
     }
     
     String AlterTableField::toString() {

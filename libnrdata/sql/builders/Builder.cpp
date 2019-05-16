@@ -34,6 +34,20 @@ namespace nrcore {
         
     }
     
+    Builder* Builder::clear() {
+        fields.clear();
+        joins.clear();
+        values.clear();
+        clause = Ref<Clause>();
+        _order.clear();
+        _group.clear();
+        offset_limit = OffsetLimit();
+        
+        field_descriptors.clear();
+        
+        return this;
+    }
+    
     String Builder::getJoins() {
         String ret;
         
@@ -96,16 +110,19 @@ namespace nrcore {
         field_descriptors.push(fd);
     }
     
-    void Builder::setEngine(String engine) {
+    Builder& Builder::setEngine(String engine) {
         this->engine = escape(engine);
+        return *this;
     }
     
-    void Builder::setCharset(String charset) {
+    Builder& Builder::setCharset(String charset) {
         this->charset = escape(charset);
+        return *this;
     }
     
-    void Builder::setCollate(String collate) {
+    Builder& Builder::setCollate(String collate) {
         this->collate = escape(collate);
+        return *this;
     }
     
 }

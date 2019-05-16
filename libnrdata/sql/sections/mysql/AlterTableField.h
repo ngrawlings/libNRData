@@ -26,10 +26,10 @@ namespace nrcore {
         AlterTableField(String name, FieldDescriptor::TYPE type);
         virtual ~AlterTableField();
         
-        void add();
-        void drop();
-        void change(String new_name);
-        void afterColumn(String field);
+        AlterTableField& add();
+        AlterTableField& drop();
+        AlterTableField& change(String new_name);
+        AlterTableField& afterColumn(String field);
         
         String toString();
         

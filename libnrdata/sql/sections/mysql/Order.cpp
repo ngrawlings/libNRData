@@ -29,6 +29,10 @@ namespace nrcore {
         orders.push(Ref<ORDER>(order));
     }
     
+    void Order::clear() {
+        orders.clear();
+    }
+    
     String Order::toString() {
         String ret;
         

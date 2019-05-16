@@ -29,6 +29,7 @@ namespace nrcore {
         virtual ~Order();
         
         void add(String field, DIRECTION direction);
+        void clear();
         
         String toString();
         

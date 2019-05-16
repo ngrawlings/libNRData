@@ -17,6 +17,8 @@ namespace nrcore {
  
     Model::Model(Connector* con, String table) : con(con), table(table) {
         loadRevision();
+        
+        builder = Ref<Builder>();
     }
     
     Model::~Model() {
@@ -37,6 +39,16 @@ namespace nrcore {
                 printf("Error in data migration: %s\n", e.getMessage());
             }
         }
+    }
+    
+    Builder* Model::getBuilder() {
+        if (con)
+            builder = con->getBuilder(table);
+        
+        if (!builder.getPtr())
+            throw Exception(-1, "Failed to get a builder instance");
+        
+        return builder.getPtr();
     }
     
 }

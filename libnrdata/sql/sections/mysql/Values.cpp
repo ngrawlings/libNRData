@@ -29,6 +29,10 @@ namespace nrcore {
         values.push(Ref<VALUE>(_value));
     }
     
+    void Values::clear() {
+        values.clear();
+    }
+    
     String Values::toString() {
         String ret;
         
