@@ -8,6 +8,7 @@
 
 #include "Model.h"
 
+#include <libnrcore/exception/Exception.h>
 #include <libnrcore/memory/Ref.h>
 
 #include <libnrdata/sql/sections/mysql/ClauseValue.h>
@@ -16,7 +17,6 @@ namespace nrcore {
  
     Model::Model(Connector* con, String table) : con(con), table(table) {
         loadRevision();
-        runMigration();
     }
     
     Model::~Model() {
@@ -29,9 +29,13 @@ namespace nrcore {
     
     void Model::runMigration() {
         int current_revision = revision();
-        for (int i=_revision; i<current_revision; i++) {
-            if (migrate(i))
-                con->schemas().getPtr()->setRevision(table, i);
+        for (int i=_revision+1; i<=current_revision; i++) {
+            try {
+                if (migrate(i))
+                    con->schemas().getPtr()->setRevision(table, i);
+            } catch (Exception e) {
+                printf("Error in data migration: %s\n", e.getMessage());
+            }
         }
     }
     

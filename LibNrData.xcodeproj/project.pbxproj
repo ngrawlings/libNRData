@@ -12,13 +12,14 @@
 		97004E4F228AE20800805A22 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97004E4E228AE20800805A22 /* main.cpp */; };
 		97004E55228AEADA00805A22 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97004E51228AEADA00805A22 /* libssl.a */; };
 		97004E57228AEADA00805A22 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97004E53228AEADA00805A22 /* libcrypto.a */; };
-		97004E69228B13B400805A22 /* libnrcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97004E68228B13B400805A22 /* libnrcore.a */; };
 		97004E6C228B16A400805A22 /* Model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97004E6A228B16A400805A22 /* Model.cpp */; };
 		97004E6D228B16A400805A22 /* Model.h in Headers */ = {isa = PBXBuildFile; fileRef = 97004E6B228B16A400805A22 /* Model.h */; };
 		97004E71228B172100805A22 /* Schemas.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97004E6F228B172100805A22 /* Schemas.cpp */; };
 		97004E72228B172100805A22 /* Schemas.h in Headers */ = {isa = PBXBuildFile; fileRef = 97004E70228B172100805A22 /* Schemas.h */; };
 		97004E75228B27EF00805A22 /* AlterTableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97004E73228B27EF00805A22 /* AlterTableField.cpp */; };
 		97004E76228B27EF00805A22 /* AlterTableField.h in Headers */ = {isa = PBXBuildFile; fileRef = 97004E74228B27EF00805A22 /* AlterTableField.h */; };
+		97004E79228CA8BE00805A22 /* libnrcore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97004E78228CA8BE00805A22 /* libnrcore.a */; };
+		97004E7C228CAF9800805A22 /* TestModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 97004E7A228CAF9800805A22 /* TestModel.cpp */; };
 		971487AC227A285200570548 /* Connector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 971487AA227A285200570548 /* Connector.cpp */; };
 		971487AD227A285200570548 /* Connector.h in Headers */ = {isa = PBXBuildFile; fileRef = 971487AB227A285200570548 /* Connector.h */; };
 		971487B4227A2C0F00570548 /* libmysqlclient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 971487B3227A2C0F00570548 /* libmysqlclient.a */; };
@@ -69,13 +70,15 @@
 		97004E4E228AE20800805A22 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		97004E51228AEADA00805A22 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../usr/local/Cellar/openssl/1.0.2r/lib/libssl.a; sourceTree = "<group>"; };
 		97004E53228AEADA00805A22 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../usr/local/Cellar/openssl/1.0.2r/lib/libcrypto.a; sourceTree = "<group>"; };
-		97004E68228B13B400805A22 /* libnrcore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libnrcore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		97004E6A228B16A400805A22 /* Model.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Model.cpp; sourceTree = "<group>"; };
 		97004E6B228B16A400805A22 /* Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		97004E6F228B172100805A22 /* Schemas.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Schemas.cpp; sourceTree = "<group>"; };
 		97004E70228B172100805A22 /* Schemas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Schemas.h; sourceTree = "<group>"; };
 		97004E73228B27EF00805A22 /* AlterTableField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AlterTableField.cpp; sourceTree = "<group>"; };
 		97004E74228B27EF00805A22 /* AlterTableField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlterTableField.h; sourceTree = "<group>"; };
+		97004E78228CA8BE00805A22 /* libnrcore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libnrcore.a; path = ../LibNrCore/Debug/libnrcore.a; sourceTree = "<group>"; };
+		97004E7A228CAF9800805A22 /* TestModel.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestModel.cpp; sourceTree = "<group>"; };
+		97004E7B228CAF9800805A22 /* TestModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestModel.h; sourceTree = "<group>"; };
 		97148799227A267E00570548 /* libnrdata.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libnrdata.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		971487AA227A285200570548 /* Connector.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Connector.cpp; sourceTree = "<group>"; };
 		971487AB227A285200570548 /* Connector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Connector.h; sourceTree = "<group>"; };
@@ -115,8 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				97004E69228B13B400805A22 /* libnrcore.a in Frameworks */,
 				97004E55228AEADA00805A22 /* libssl.a in Frameworks */,
+				97004E79228CA8BE00805A22 /* libnrcore.a in Frameworks */,
 				97004E57228AEADA00805A22 /* libcrypto.a in Frameworks */,
 				97004E4B228ADD6A00805A22 /* libnrdata.a in Frameworks */,
 				97004E4C228ADD6C00805A22 /* libmysqlclient.a in Frameworks */,
@@ -137,6 +140,8 @@
 		97004E4D228AE1C700805A22 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				97004E7B228CAF9800805A22 /* TestModel.h */,
+				97004E7A228CAF9800805A22 /* TestModel.cpp */,
 				97004E4E228AE20800805A22 /* main.cpp */,
 			);
 			path = Tests;
@@ -197,7 +202,7 @@
 		971487B2227A2C0F00570548 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				97004E68228B13B400805A22 /* libnrcore.a */,
+				97004E78228CA8BE00805A22 /* libnrcore.a */,
 				97004E53228AEADA00805A22 /* libcrypto.a */,
 				97004E51228AEADA00805A22 /* libssl.a */,
 				971487B3227A2C0F00570548 /* libmysqlclient.a */,
@@ -378,6 +383,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				97004E4F228AE20800805A22 /* main.cpp in Sources */,
+				97004E7C228CAF9800805A22 /* TestModel.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

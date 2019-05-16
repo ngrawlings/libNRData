@@ -53,7 +53,7 @@ namespace nrcore {
                 return create();
                 
             case ALTER:
-                
+                return alter();
                 
             case DROP:
                 return drop();
@@ -93,14 +93,8 @@ namespace nrcore {
     String MysqlBuilder::insert() {
         String fields = this->values.getFields();
         String values = this->values.getValues();
-        String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
-        
-        String sql = String("INSERT INTO `%` (%) VALUES (%)").arg(table).arg(fields).arg(values);
-        
-        if (where.length())
-            sql += String(" WHERE %").arg(where);
-        
-        return sql;
+
+        return String("INSERT INTO `%` (%) VALUES (%)").arg(table).arg(fields).arg(values);
     }
     
     String MysqlBuilder::update() {

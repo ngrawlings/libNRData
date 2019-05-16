@@ -30,7 +30,9 @@ namespace nrcore {
     }
     
     int Schemas::getRevision(String table) {
-        Builder* b = con->getBuilder("schemas").getPtr();
+        Ref<Builder> _b = con->getBuilder("schemas");
+        Builder* b = _b.getPtr();
+        
         b->select("revision");
         b->setClause(Ref<Clause>(new ClauseValue(b, "table", "=", table)));
         
@@ -42,12 +44,20 @@ namespace nrcore {
     }
     
     void Schemas::setRevision(String table, int revision) {
-        Builder* b = con->getBuilder("schemas").getPtr();
+        int _rev = getRevision(table);
+        
+        Ref<Builder> _b = con->getBuilder("schemas");
+        Builder* b = _b.getPtr();
         
         b->value("revision", String("%").arg(revision));
         b->setClause(Ref<Clause>(new ClauseValue(b, "table", "=", table)));
         
-        con->execute(b->sql(Builder::UPDATE));
+        if (_rev)
+            con->execute(b->sql(Builder::UPDATE));
+        else {
+            b->value("table", String("%").arg(table));
+            con->execute(b->sql(Builder::INSERT));
+        }
     }
     
     bool Schemas::exists() {
