@@ -62,52 +62,64 @@ namespace nrcore {
         return ret;
     }
     
-    void Builder::select(String field) {
+    Builder* Builder::select(String field) {
         fields.addField(escape(field));
+        return this;
     }
     
-    void Builder::join(String table, Ref<Clause> clause) {
+    Builder* Builder::join(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause)));
+        return this;
     }
     
-    void Builder::leftJoin(String table, Ref<Clause> clause) {
+    Builder* Builder::leftJoin(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause, "LEFT")));
+        return this;
     }
     
-    void Builder::rightJoin(String table, Ref<Clause> clause) {
+    Builder* Builder::rightJoin(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause, "RIGHT")));
+        return this;
     }
                            
-    void Builder::outerJoin(String table, Ref<Clause> clause) {
+    Builder* Builder::outerJoin(String table, Ref<Clause> clause) {
         joins.push(Ref<Join>(new Join(escape(table), clause, "OUTER")));
+        return this;
     }
     
-    void Builder::value(String name, String value) {
+    Builder* Builder::value(String name, String value) {
         values.add(escape(name), escape(value));
+        return this;
     }
     
-    void Builder::setClause(Ref<Clause> clause) {
+    Builder* Builder::setClause(Ref<Clause> clause) {
         this->clause = clause;
+        return this;
     }
     
-    void Builder::order(String field, Order::DIRECTION direction) {
+    Builder* Builder::order(String field, Order::DIRECTION direction) {
         _order.add(escape(field), direction);
+        return this;
     }
     
-    void Builder::group(String field) {
+    Builder* Builder::group(String field) {
         _group.addField(escape(field));
+        return this;
     }
     
-    void Builder::offset(long long offset) {
+    Builder* Builder::offset(long long offset) {
         offset_limit.offset(offset);
+        return this;
     }
     
-    void Builder::limit(int limit) {
+    Builder* Builder::limit(int limit) {
         offset_limit.limit(limit);
+        return this;
     }
     
-    void Builder::fieldDescriptor(Ref<FieldDescriptor> fd) {
+    Builder* Builder::fieldDescriptor(Ref<FieldDescriptor> fd) {
         field_descriptors.push(fd);
+        return this;
     }
     
     Builder& Builder::setEngine(String engine) {

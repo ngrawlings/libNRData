@@ -46,24 +46,24 @@ namespace nrcore {
         virtual String escape(String str) = 0;
         virtual String sql(TYPE type) = 0;
         
-        void select(String field);
+        Builder* select(String field);
         
-        void join(String table, Ref<Clause> clause);
-        void leftJoin(String table, Ref<Clause> clause);
-        void rightJoin(String table, Ref<Clause> clause);
-        void outerJoin(String table, Ref<Clause> clause);
+        Builder* join(String table, Ref<Clause> clause);
+        Builder* leftJoin(String table, Ref<Clause> clause);
+        Builder* rightJoin(String table, Ref<Clause> clause);
+        Builder* outerJoin(String table, Ref<Clause> clause);
         
-        void value(String name, String value);
+        Builder* value(String name, String value);
         
-        void setClause(Ref<Clause> clause);
+        Builder* setClause(Ref<Clause> clause);
         
-        void order(String field, Order::DIRECTION direction);
-        void group(String field);
+        Builder* order(String field, Order::DIRECTION direction);
+        Builder* group(String field);
         
-        void offset(long long offset);
-        void limit(int offset);
+        Builder* offset(long long offset);
+        Builder* limit(int offset);
         
-        void fieldDescriptor(Ref<FieldDescriptor> fd);
+        Builder* fieldDescriptor(Ref<FieldDescriptor> fd);
         
         Builder& setEngine(String engine);
         Builder& setCharset(String charset);

@@ -7,6 +7,7 @@
 //
 
 #include "TestModel.h"
+#include <libnrdata/sql/sections/mysql/ClauseValue.h>
 #include <libnrdata/sql/sections/mysql/AlterTableField.h>
 
 TestModel::TestModel(Connector* con) : Model(con, "test_table") {
@@ -18,11 +19,19 @@ TestModel::~TestModel() {
 }
 
 bool TestModel::emailExists(String email) {
-    return false;
+    Builder* b = getBuilder()->clear();
+    
+    b->select("id")->setClause(Ref<Clause>(new ClauseValue(b, "email", "=", email)));
+    ResultSet res = con->query(b->sql(Builder::SELECT));
+
+    return res.length()>0;
 }
 
 void TestModel::insert(String email, String description) {
+    Builder* b = getBuilder()->clear();
     
+    b->value("email", email)->value("description", description);
+    con->execute(b->sql(Builder::INSERT));
 }
 
 int TestModel::revision() {

@@ -19,6 +19,10 @@ int main(int argc, const char * argv[]) {
     try {
         MysqlConnector con("127.0.0.1", 3306, "root", "MovingOn", "test");
         TestModel tm(&con);
+        
+        if (!tm.emailExists("test@test.com"))
+            tm.insert("test@test.com", "A simple test");
+        
     } catch (Exception e) {
         printf("%s\n", e.getMessage());
     }
