@@ -11,7 +11,7 @@
 
 namespace nrcore {
     
-    ResultSet::ResultSet(Connector *con, Array<String> columns) : con(con), columns(columns) {
+    ResultSet::ResultSet(Connector *con, Array<String> columns, unsigned int row_count) : con(con), columns(columns), rows(row_count) {
         cursor_offset = 0;
     }
     

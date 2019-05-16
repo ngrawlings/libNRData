@@ -20,7 +20,7 @@ namespace nrcore {
     
     class ResultSet {
     public:
-        ResultSet(Connector *con, Array<String> columns);
+        ResultSet(Connector *con, Array<String> columns, unsigned int row_count=0);
         virtual ~ResultSet();
         
         void addRow(Array<Memory> fields);

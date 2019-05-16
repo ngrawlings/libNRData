@@ -55,16 +55,14 @@ namespace nrcore {
         MYSQL_RES *result = mysql_store_result(con);
         
         int num_fields = mysql_num_fields(result);
-        Array<String> columns;
-        Array<Memory> row;
+        Array<String> columns(num_fields);
+        Array<Memory> row(num_fields);
 
         MYSQL_FIELD *field;
-        while((field = mysql_fetch_field(result))) {
+        while((field = mysql_fetch_field(result)))
             columns.push(String(field->name));
-            row.push(Memory());
-        }
         
-        ResultSet res(this, columns);
+        ResultSet res(this, columns, (unsigned int)mysql_num_rows(result));
         
         MYSQL_ROW mysql_row;
         unsigned long *lengths;
@@ -73,7 +71,7 @@ namespace nrcore {
             lengths = mysql_fetch_lengths(result);
             
             for(int i = 0; i < num_fields; i++)
-                row[i] = Memory(mysql_row[i], lengths[i]+1);
+                row.push(Memory(mysql_row[i], lengths[i]+1));
             
             res.addRow(row);
         }
