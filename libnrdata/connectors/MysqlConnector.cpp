@@ -17,16 +17,27 @@ namespace nrcore {
         con = mysql_init(NULL);
         
         if (con == NULL)
-            throw Exception(-1, mysql_error(con));
+            throw Exception(mysql_errno(con), mysql_error(con));
         
         if (mysql_real_connect(con, host, username, password, database, port, NULL, 0) == NULL)
-            throw Exception(-1, mysql_error(con));
+            throw Exception(mysql_errno(con), mysql_error(con));
         
-        setConnection(con);
+        if (database)
+            setConnection(con);
     }
     
     MysqlConnector::~MysqlConnector() {
         
+    }
+    
+    void MysqlConnector::createDatabase(String name) {
+        execute(String("CREATE DATABASE `%`").arg(name));
+        execute(String("USE `%`").arg(name));
+        setConnection(con);
+    }
+    
+    void MysqlConnector::dropDatabase(String name) {
+        execute(String("DROP DATABASE `%`").arg(name));
     }
     
     void MysqlConnector::execute(String sql) {
@@ -71,7 +82,7 @@ namespace nrcore {
         return res;
     }
     
-    bool MysqlConnector::exists(String table) {
+    bool MysqlConnector::tableExists(String table) {
         try {
             query(String("SELECT 1 FROM `schemas` LIMIT 1;"));
         } catch (Exception e) {

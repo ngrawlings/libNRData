@@ -20,6 +20,9 @@ int main(int argc, const char * argv[]) {
         MysqlConnector con("127.0.0.1", 3306, "root", "MovingOn", "test");
         TestModel tm(&con);
         
+        if (!con.tableExists("test_table"))
+            printf("table does not exist\n");
+        
         if (!tm.emailExists("test@test.com"))
             tm.insert("test@test.com", "A simple test");
         
@@ -28,7 +31,7 @@ int main(int argc, const char * argv[]) {
             printf("%s\n", emails[i].operator char *());
         
     } catch (Exception e) {
-        printf("%s\n", e.getMessage());
+        printf("%d: %s\n", e.getErrorCode(), e.getMessage());
     }
     
     printf("Finished\n");

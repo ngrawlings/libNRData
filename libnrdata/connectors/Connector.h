@@ -27,10 +27,12 @@ namespace nrcore {
         
         virtual Ref<Builder> getBuilder(String table) = 0;
         
+        virtual void createDatabase(String name) = 0;
+        virtual void dropDatabase(String name) = 0;
+        virtual bool tableExists(String table) = 0;
+        
         virtual void execute(String sql) = 0;
         virtual ResultSet query(String sql) = 0;
-        virtual bool exists(String table) = 0;
-        
         
     protected:
         void *connection_instance;

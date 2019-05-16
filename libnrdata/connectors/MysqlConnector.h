@@ -25,14 +25,18 @@ namespace nrcore {
     
     class MysqlConnector : public Connector {
     public:
-        MysqlConnector(const char* host, int port, const char* username, const char* password, const char* database);
+        MysqlConnector(const char* host, int port, const char* username, const char* password, const char* database=0);
         virtual ~MysqlConnector();
         
         Ref<Builder> getBuilder(String table);
         
+        void createDatabase(String name);
+        void dropDatabase(String name);
+        bool tableExists(String table);
+        
         void execute(String sql);
         ResultSet query(String sql);
-        bool exists(String table);
+        
         
     protected:
         MYSQL *con;
