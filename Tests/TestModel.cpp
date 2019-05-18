@@ -7,8 +7,10 @@
 //
 
 #include "TestModel.h"
-#include <libnrdata/sql/sections/mysql/ClauseValue.h>
+#include <libnrdata/sql/sections/sql/ClauseValue.h>
 #include <libnrdata/sql/sections/mysql/AlterTableField.h>
+
+using namespace mysql;
 
 TestModel::TestModel(Connector* con) : Model(con, "test_table") {
     runMigration();

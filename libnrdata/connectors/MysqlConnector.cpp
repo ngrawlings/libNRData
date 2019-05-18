@@ -30,6 +30,10 @@ namespace nrcore {
         
     }
     
+    Ref<Builder> MysqlConnector::getBuilder(String table) {
+        return Ref<Builder>(new MysqlBuilder(con, table));
+    }
+    
     void MysqlConnector::createDatabase(String name) {
         execute(String("CREATE DATABASE `%`").arg(name));
         execute(String("USE `%`").arg(name));
@@ -87,10 +91,6 @@ namespace nrcore {
             return false;
         }
         return true;
-    }
-    
-    Ref<Builder> MysqlConnector::getBuilder(String table) {
-        return Ref<Builder>(new MysqlBuilder(con, table));
     }
     
 }

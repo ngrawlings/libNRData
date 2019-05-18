@@ -14,16 +14,17 @@
 #include <libnrcore/memory/Array.h>
 #include <libnrcore/memory/String.h>
 
-#include "../sections/mysql/Fields.h"
-#include "../sections/mysql/Join.h"
-#include "../sections/mysql/Values.h"
-#include "../sections/mysql/Clause.h"
-#include "../sections/mysql/Order.h"
-#include "../sections/mysql/OffsetLimit.h"
-
-#include "../sections/mysql/FieldDescriptor.h"
+#include "../sections/sql/Fields.h"
+#include "../sections/sql/Values.h"
+#include "../sections/sql/Join.h"
+#include "../sections/sql/Clause.h"
+#include "../sections/sql/Order.h"
+#include "../sections/sql/OffsetLimit.h"
+#include "../sections/sql/FieldDescriptor.h"
 
 namespace nrcore {
+    
+    using namespace sql;
     
     class Builder {
     public:
@@ -47,6 +48,8 @@ namespace nrcore {
         virtual String sql(TYPE type) = 0;
         
         Builder* select(String field);
+        
+        Builder* distinct(bool val);
         
         Builder* join(String table, Ref<Clause> clause);
         Builder* leftJoin(String table, Ref<Clause> clause);
@@ -78,6 +81,8 @@ namespace nrcore {
         Order _order;
         Fields _group;
         OffsetLimit offset_limit;
+        
+        bool _distinct;
         
         Array< Ref<FieldDescriptor> > field_descriptors;
         String engine;

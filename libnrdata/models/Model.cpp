@@ -11,7 +11,7 @@
 #include <libnrcore/exception/Exception.h>
 #include <libnrcore/memory/Ref.h>
 
-#include <libnrdata/sql/sections/mysql/ClauseValue.h>
+#include <libnrdata/sql/sections/sql/ClauseValue.h>
 
 namespace nrcore {
  

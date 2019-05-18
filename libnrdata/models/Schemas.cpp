@@ -12,7 +12,7 @@
 
 #include <libnrdata/connectors/Connector.h>
 
-#include <libnrdata/sql/sections/mysql/ClauseValue.h>
+#include <libnrdata/sql/sections/sql/ClauseValue.h>
 
 namespace nrcore {
     

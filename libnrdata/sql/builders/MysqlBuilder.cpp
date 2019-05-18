@@ -70,7 +70,8 @@ namespace nrcore {
         String group = this->_group.toString();
         String limit = this->offset_limit.toString();
         
-        String sql = String("SELECT % FROM `%`").arg(fields).arg(table);
+        String sql = String("SELECT %% FROM `%`")
+                .arg(_distinct ? "DISTINCT " : "").arg(fields).arg(table);
         
         if (this->joins.length())
             sql += String(" %").arg(joins);

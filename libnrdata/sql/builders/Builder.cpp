@@ -11,7 +11,7 @@
 namespace nrcore {
  
     Builder::Builder(String table) : table(table) {
-        
+        clear();
     }
     
     Builder::Builder(const Builder& genbase) {
@@ -23,6 +23,8 @@ namespace nrcore {
         _order              = genbase._order;
         _group              = genbase._group;
         offset_limit        = genbase.offset_limit;
+        
+        _distinct            = genbase._distinct;
         
         field_descriptors   = genbase.field_descriptors;
         engine              = genbase.engine;
@@ -42,6 +44,8 @@ namespace nrcore {
         _order.clear();
         _group.clear();
         offset_limit = OffsetLimit();
+        
+        _distinct = false;
         
         field_descriptors.clear();
         
@@ -64,6 +68,11 @@ namespace nrcore {
     
     Builder* Builder::select(String field) {
         fields.addField(escape(field));
+        return this;
+    }
+    
+    Builder* Builder::distinct(bool val) {
+        _distinct = val;
         return this;
     }
     

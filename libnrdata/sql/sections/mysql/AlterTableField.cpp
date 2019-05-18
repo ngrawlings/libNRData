@@ -9,61 +9,63 @@
 #include "AlterTableField.h"
 
 namespace nrcore {
-    
-    AlterTableField::AlterTableField(String name, FieldDescriptor::TYPE type) : FieldDescriptor(name, type) {
+    namespace mysql {
         
-    }
-    
-    AlterTableField::~AlterTableField() {
-        
-    }
-    
-    AlterTableField& AlterTableField::add() {
-        action = ADD;
-        return *this;
-    }
-    
-    AlterTableField& AlterTableField::drop() {
-        action = DROP;
-        return *this;
-    }
-    
-    AlterTableField& AlterTableField::change(String new_name) {
-        action = CHANGE;
-        this->new_name = new_name;
-        return *this;
-    }
-    
-    AlterTableField& AlterTableField::afterColumn(String field) {
-        after_column = field;
-        return *this;
-    }
-    
-    String AlterTableField::toString() {
-        String ret;
-        
-        switch (action) {
-            case ADD:
-                ret = String("ADD COLUMN %").arg(FieldDescriptor::toString());
-                break;
-                
-            case DROP:
-                ret = String("DROP COLUMN `%`").arg(name);
-                break;
-                
-            case CHANGE:
-                ret = String("CHANGE COLUMN `%` `%` %").arg(name).arg(new_name.length() ? new_name : name).arg(FieldDescriptor::toString());
-                break;
+        AlterTableField::AlterTableField(String name, FieldDescriptor::TYPE type) : FieldDescriptor(name, type) {
+            
         }
         
-        ret.arg(FieldDescriptor::toString());
+        AlterTableField::~AlterTableField() {
+            
+        }
         
-        if (after_column.length())
-            ret += String(" AFTER %").arg(after_column);
-        else
-            ret += " FIRST";
+        AlterTableField& AlterTableField::add() {
+            action = ADD;
+            return *this;
+        }
         
-        return ret;
+        AlterTableField& AlterTableField::drop() {
+            action = DROP;
+            return *this;
+        }
+        
+        AlterTableField& AlterTableField::change(String new_name) {
+            action = CHANGE;
+            this->new_name = new_name;
+            return *this;
+        }
+        
+        AlterTableField& AlterTableField::afterColumn(String field) {
+            after_column = field;
+            return *this;
+        }
+        
+        String AlterTableField::toString() {
+            String ret;
+            
+            switch (action) {
+                case ADD:
+                    ret = String("ADD COLUMN %").arg(FieldDescriptor::toString());
+                    break;
+                    
+                case DROP:
+                    ret = String("DROP COLUMN `%`").arg(name);
+                    break;
+                    
+                case CHANGE:
+                    ret = String("CHANGE COLUMN `%` `%` %").arg(name).arg(new_name.length() ? new_name : name).arg(FieldDescriptor::toString());
+                    break;
+            }
+            
+            ret.arg(FieldDescriptor::toString());
+            
+            if (after_column.length())
+                ret += String(" AFTER %").arg(after_column);
+            else
+                ret += " FIRST";
+            
+            return ret;
+        }
+        
     }
-    
 }
