@@ -9,7 +9,8 @@
 #include "MysqlConnector.h"
 
 #include <libnrcore/exception/Exception.h>
-#include <libnrdata/sql//builders/MysqlBuilder.h>
+#include <libnrdata/sql/builders/MysqlBuilder.h>
+#include <libnrdata/sql/sections/mysql/FieldDescriptor.h>
 
 namespace nrcore {
     

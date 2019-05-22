@@ -9,7 +9,7 @@
 #include "MysqlBuilder.h"
 
 #include <libnrcore/exception/Exception.h>
-
+#include "../sections/mysql/FieldDescriptor.h"
 
 namespace nrcore {
     
@@ -60,6 +60,10 @@ namespace nrcore {
         }
         
         throw Exception(-1,  "Reached non executable point");
+    }
+    
+    Ref<FieldDescriptor> MysqlBuilder::getFieldDescriptor(String name, String type) {
+        return Ref<FieldDescriptor>(new mysql::FieldDescriptor(name, mysql::FieldDescriptor::getTypeByString(type)));
     }
     
     String MysqlBuilder::select() {
@@ -123,12 +127,12 @@ namespace nrcore {
         int len = (int)field_descriptors.length();
         if (len) {
             String fields = field_descriptors[0].getPtr()->toString();
-            String indexes = field_descriptors[0].getPtr()->getIndex();
+            String indexes = ((mysql::FieldDescriptor*)field_descriptors[0].getPtr())->getIndex();
             
             for (int i=1; i<len; i++) {
                 fields += String(", ")+field_descriptors[i].getPtr()->toString();
                 
-                String index = field_descriptors[i].getPtr()->getIndex();
+                String index = ((mysql::FieldDescriptor*)field_descriptors[i].getPtr())->getIndex();
                 if (index.length())
                     indexes += String(", ")+index;
             }

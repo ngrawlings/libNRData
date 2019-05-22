@@ -22,6 +22,9 @@ namespace nrcore {
         String escape(String str);
         String sql(TYPE type);
         
+        Ref<FieldDescriptor> getFieldDescriptor(String name, String type);
+        
+    protected:
         String select();
         String insert();
         String update();

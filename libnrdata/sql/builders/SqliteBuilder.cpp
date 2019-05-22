@@ -9,6 +9,7 @@
 #include "SqliteBuilder.h"
 
 #include <libnrcore/exception/Exception.h>
+#include "../sections/sqlite/FieldDescriptor.h"
 
 namespace nrcore {
     
@@ -49,6 +50,10 @@ namespace nrcore {
         }
         
         throw Exception(-1,  "Reached non executable point");
+    }
+    
+    Ref<FieldDescriptor> SqliteBuilder::getFieldDescriptor(String name, String type) {
+        return Ref<FieldDescriptor>(new sqlite::FieldDescriptor(name, sqlite::FieldDescriptor::getTypeByString(type)));
     }
     
     String SqliteBuilder::select() {

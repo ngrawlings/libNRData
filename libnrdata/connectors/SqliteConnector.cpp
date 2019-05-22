@@ -9,7 +9,8 @@
 #include "SqliteConnector.h"
 
 #include <libnrcore/exception/Exception.h>
-#include <libnrdata/sql//builders/SqliteBuilder.h>
+#include <libnrdata/sql/builders/SqliteBuilder.h>
+#include <libnrdata/sql/sections/sqlite/FieldDescriptor.h>
 
 namespace nrcore {
 

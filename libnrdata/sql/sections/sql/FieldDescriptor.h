@@ -6,8 +6,8 @@
 //  Copyright © 2019 Liquidsoft Studio. All rights reserved.
 //
 
-#ifndef FieldDescriptor_hpp
-#define FieldDescriptor_hpp
+#ifndef FieldDescriptor_Base_hpp
+#define FieldDescriptor_Base_hpp
 
 #include <stdio.h>
 #include <libnrcore/memory/Ref.h>
@@ -19,113 +19,31 @@ namespace nrcore {
         
         class FieldDescriptor {
         public:
-            typedef enum {
-                PRIMARY,
-                INDEX,
-                UNIQUE,
-                FULLTEXT
-            } INDEX_TYPE;
-            
-            typedef struct {
-                String name;
-                INDEX_TYPE type;
-            } _INDEX;
-            
-            typedef enum {
-                TINYINT,
-                SMALLINT,
-                MEDIUMINT,
-                INT,
-                BIGINT,
-                FLOAT,
-                DOUBLE,
-                DOUBLE_PRECISION,
-                REAL,
-                DECIMAL,
-                BIT,
-                SERIAL,
-                BOOL,
-                BOOLEAN,
-                DEC,
-                FIXED,
-                NUMERIC,
-                CHAR,
-                VARCHAR,
-                TINYTEXT,
-                TEXT,
-                MEDIUMTEXT,
-                LONGTEXT,
-                TINYBLOB,
-                MEDIUMBLOB,
-                BLOB,
-                LONGBLOB,
-                BINARY,
-                VARBINARY,
-                JSON,
-                ENUM,
-                SET,
-                DATE,
-                DATETIME,
-                TIMESTAMP,
-                TIME,
-                YEAR,
-                GEOMETRY,
-                POINT,
-                LINESTRING,
-                POLYGON,
-                MULTIPOINT,
-                MULTILINESTRING,
-                MULTIPOLYGON,
-                GEOMETRYCOLLECTION
-            } TYPE;
-            
-        public:
-            FieldDescriptor(String name, TYPE type);
-            FieldDescriptor(const FieldDescriptor& fd);
+            FieldDescriptor();
             virtual ~FieldDescriptor();
             
-            FieldDescriptor& setParameter(String param);
-            FieldDescriptor& setUnsigned(bool val);
-            FieldDescriptor& setZeroFill(bool val);
-            FieldDescriptor& setBinary(bool val);
-            FieldDescriptor& notNull(bool val);
-            FieldDescriptor& setDefault(String _default);
+            virtual FieldDescriptor& setParameter(String param) { return *this; }
+            virtual FieldDescriptor& setUnsigned(bool val) { return *this; }
+            virtual FieldDescriptor& setZeroFill(bool val) { return *this; }
+            virtual FieldDescriptor& setBinary(bool val) { return *this; }
+            virtual FieldDescriptor& notNull(bool val) { return *this; }
+            virtual FieldDescriptor& setDefault(String _default) { return *this; }
             
-            FieldDescriptor& setExtra(String extra);
+            virtual FieldDescriptor& setExtra(String extra) { return *this; }
             
-            FieldDescriptor& setAutoIncrement();
-            FieldDescriptor& setUpdateCurrentDate();
-            FieldDescriptor& setSerialDefaultValue();
+            virtual FieldDescriptor& setAutoIncrement() = 0;
             
-            FieldDescriptor& setEncoding(String encoding);
-            FieldDescriptor& setCollation(String collation);
-            FieldDescriptor& setComment(String comment);
+            virtual FieldDescriptor& setEncoding(String encoding) { return *this; }
+            virtual FieldDescriptor& setCollation(String collation) { return *this; }
+            virtual FieldDescriptor& setComment(String comment) { return *this; }
             
-            FieldDescriptor& setIndex(INDEX_TYPE type);
+            virtual FieldDescriptor& setIndex(String type) { return *this; }
             
-            String getTypeString();
+            virtual String toString() = 0;
             
-            virtual String toString();
-            String getIndex();
-            
-        protected:
-            String name;
-            TYPE type;
-            String parameter; // tipically the length displaied within the cli client, however it can be the enum values
-            bool _unsigned;
-            bool zerofill;
-            bool binary;
-            bool notnull;
-            String _default;
-            String extra;
-            String encoding;
-            String collation;
-            String comment;
-            
-            Ref<_INDEX> index;
         };
-    
+        
     }
 }
 
-#endif /* FieldDescriptor_hpp */
+#endif /* FieldDescriptor_Base_hpp */

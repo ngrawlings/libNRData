@@ -72,6 +72,8 @@ namespace nrcore {
         Builder& setCharset(String charset);
         Builder& setCollate(String collate);
         
+        virtual Ref<FieldDescriptor> getFieldDescriptor(String name, String type) = 0;
+        
     protected:
         String table;
         Fields fields;

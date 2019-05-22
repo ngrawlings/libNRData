@@ -56,6 +56,10 @@
 		972B8468228F1BE3004E8423 /* SqliteBuilder.h in Headers */ = {isa = PBXBuildFile; fileRef = 972B8466228F1BE3004E8423 /* SqliteBuilder.h */; };
 		972B8470228F3729004E8423 /* Fields.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 972B846E228F3729004E8423 /* Fields.cpp */; };
 		972B8471228F3729004E8423 /* Fields.h in Headers */ = {isa = PBXBuildFile; fileRef = 972B846F228F3729004E8423 /* Fields.h */; };
+		972B848F2290A4F1004E8423 /* AlterTableField.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 972B848D2290A4F1004E8423 /* AlterTableField.cpp */; };
+		972B84922290A799004E8423 /* FieldDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 972B84902290A799004E8423 /* FieldDescriptor.cpp */; };
+		9733B44222942C1B0086FBCD /* FieldDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9733B44022942C1B0086FBCD /* FieldDescriptor.cpp */; };
+		9733B44322942C1B0086FBCD /* FieldDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9733B44122942C1B0086FBCD /* FieldDescriptor.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -121,6 +125,12 @@
 		972B8466228F1BE3004E8423 /* SqliteBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SqliteBuilder.h; sourceTree = "<group>"; };
 		972B846E228F3729004E8423 /* Fields.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Fields.cpp; sourceTree = "<group>"; };
 		972B846F228F3729004E8423 /* Fields.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Fields.h; sourceTree = "<group>"; };
+		972B848D2290A4F1004E8423 /* AlterTableField.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = AlterTableField.cpp; sourceTree = "<group>"; };
+		972B848E2290A4F1004E8423 /* AlterTableField.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AlterTableField.h; sourceTree = "<group>"; };
+		972B84902290A799004E8423 /* FieldDescriptor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldDescriptor.cpp; sourceTree = "<group>"; };
+		972B84912290A799004E8423 /* FieldDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldDescriptor.h; sourceTree = "<group>"; };
+		9733B44022942C1B0086FBCD /* FieldDescriptor.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FieldDescriptor.cpp; sourceTree = "<group>"; };
+		9733B44122942C1B0086FBCD /* FieldDescriptor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FieldDescriptor.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -257,6 +267,8 @@
 		971488012281FE0E00570548 /* mysql */ = {
 			isa = PBXGroup;
 			children = (
+				971487F6227D6AF700570548 /* FieldDescriptor.h */,
+				971487F5227D6AF700570548 /* FieldDescriptor.cpp */,
 				97004E74228B27EF00805A22 /* AlterTableField.h */,
 				97004E73228B27EF00805A22 /* AlterTableField.cpp */,
 			);
@@ -279,6 +291,10 @@
 		972B845E228ED4A4004E8423 /* sqlite */ = {
 			isa = PBXGroup;
 			children = (
+				9733B44122942C1B0086FBCD /* FieldDescriptor.h */,
+				9733B44022942C1B0086FBCD /* FieldDescriptor.cpp */,
+				972B848E2290A4F1004E8423 /* AlterTableField.h */,
+				972B848D2290A4F1004E8423 /* AlterTableField.cpp */,
 			);
 			path = sqlite;
 			sourceTree = "<group>";
@@ -300,10 +316,10 @@
 				971487DC227B7A8900570548 /* Order.cpp */,
 				971487E5227CBA6800570548 /* Values.h */,
 				971487E4227CBA6800570548 /* Values.cpp */,
-				971487F6227D6AF700570548 /* FieldDescriptor.h */,
-				971487F5227D6AF700570548 /* FieldDescriptor.cpp */,
 				971487E9227CBE7800570548 /* OffsetLimit.h */,
 				971487E8227CBE7800570548 /* OffsetLimit.cpp */,
+				972B84912290A799004E8423 /* FieldDescriptor.h */,
+				972B84902290A799004E8423 /* FieldDescriptor.cpp */,
 			);
 			path = sql;
 			sourceTree = "<group>";
@@ -318,6 +334,7 @@
 				971487C2227A2D9900570548 /* Builder.h in Headers */,
 				97004E6D228B16A400805A22 /* Model.h in Headers */,
 				972B8462228ED4C8004E8423 /* SqliteConnector.h in Headers */,
+				9733B44322942C1B0086FBCD /* FieldDescriptor.h in Headers */,
 				971487B8227A2CAD00570548 /* ResultSet.h in Headers */,
 				971487CA227A38E800570548 /* Clause.h in Headers */,
 				971487BD227A2D1600570548 /* Row.h in Headers */,
@@ -417,7 +434,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				97004E4F228AE20800805A22 /* main.cpp in Sources */,
+				972B848F2290A4F1004E8423 /* AlterTableField.cpp in Sources */,
 				97004E7C228CAF9800805A22 /* TestModel.cpp in Sources */,
+				972B84922290A799004E8423 /* FieldDescriptor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,6 +450,7 @@
 				972B8467228F1BE3004E8423 /* SqliteBuilder.cpp in Sources */,
 				972B8461228ED4C8004E8423 /* SqliteConnector.cpp in Sources */,
 				971487C9227A38E800570548 /* Clause.cpp in Sources */,
+				9733B44222942C1B0086FBCD /* FieldDescriptor.cpp in Sources */,
 				971487B7227A2CAD00570548 /* ResultSet.cpp in Sources */,
 				971487EA227CBE7800570548 /* OffsetLimit.cpp in Sources */,
 				971487BC227A2D1600570548 /* Row.cpp in Sources */,

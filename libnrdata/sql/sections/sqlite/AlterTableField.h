@@ -1,8 +1,8 @@
 //
 //  AlterTableField.hpp
-//  LibNrData
+//  Tests
 //
-//  Created by Nyhl Rawlings on 14/05/2019.
+//  Created by Nyhl Rawlings on 18/05/2019.
 //  Copyright © 2019 Liquidsoft Studio. All rights reserved.
 //
 
@@ -15,16 +15,18 @@
 
 namespace nrcore {
     
-    namespace mysql {
+    using namespace mysql;
+    
+    namespace sqlite {
         
         class AlterTableField : public FieldDescriptor {
-        public:
+            public:
             typedef enum {
                 ADD,
                 DROP,
                 CHANGE
             } ACTION;
-        public:
+            public:
             AlterTableField(String name, FieldDescriptor::TYPE type);
             virtual ~AlterTableField();
             
@@ -35,12 +37,12 @@ namespace nrcore {
             
             String toString();
             
-        protected:
+            protected:
             ACTION action;
             String new_name;
             String after_column;
         };
-    
+        
     }
 }
 

@@ -12,6 +12,7 @@
 #include <libnrdata/sql/builders/Builder.h>
 #include "../result/ResultSet.h"
 #include <libnrdata/models/Schemas.h>
+#include <libnrdata/sql/sections/sql/FieldDescriptor.h>
 
 namespace nrcore {
     

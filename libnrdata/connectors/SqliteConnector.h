@@ -33,7 +33,7 @@ namespace nrcore {
         
         void execute(String sql);
         ResultSet query(String sql);
-        
+
     protected:
         sqlite3 *db;
     };

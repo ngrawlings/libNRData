@@ -73,22 +73,22 @@ namespace nrcore {
         Ref<Builder> refb = con->getBuilder("schemas");
         Builder* b = refb.getPtr();
         
-        FieldDescriptor f1("id", FieldDescriptor::INT);
-        f1.setUnsigned(true);
-        f1.setIndex(FieldDescriptor::PRIMARY);
-        f1.setAutoIncrement();
+        Ref<FieldDescriptor> f1 = b->getFieldDescriptor("id", "INT");
+        f1.getPtr()->setUnsigned(true);
+        f1.getPtr()->setIndex("PRIMARY");
+        f1.getPtr()->setAutoIncrement();
         
-        FieldDescriptor f2("table", FieldDescriptor::VARCHAR);
-        f2.setParameter("32");
-        f2.notNull(true);
+        Ref<FieldDescriptor> f2 = b->getFieldDescriptor("table", "VARCHAR");
+        f2.getPtr()->setParameter("32");
+        f2.getPtr()->notNull(true);
         
-        FieldDescriptor f3("revision", FieldDescriptor::INT);
-        f3.notNull(true);
-        f3.setDefault("0");
+        Ref<FieldDescriptor> f3 = b->getFieldDescriptor("revision", "INT");
+        f3.getPtr()->notNull(true);
+        f3.getPtr()->setDefault("0");
         
-        b->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f1)));
-        b->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f2)));
-        b->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f3)));
+        b->fieldDescriptor(f1);
+        b->fieldDescriptor(f2);
+        b->fieldDescriptor(f3);
         b->setEngine("InnoDB");
         b->setCharset("utf8mb4");
         b->setCollate("utf8mb4_0900_ai_ci");

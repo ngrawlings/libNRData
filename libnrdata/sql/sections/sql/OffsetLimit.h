@@ -9,7 +9,6 @@
 #ifndef OffsetLimit_hpp
 #define OffsetLimit_hpp
 
-#include <stdio.h>
 #include <libnrcore/memory/Ref.h>
 #include <libnrcore/memory/Array.h>
 #include <libnrcore/memory/String.h>

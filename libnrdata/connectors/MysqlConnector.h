@@ -37,7 +37,6 @@ namespace nrcore {
         void execute(String sql);
         ResultSet query(String sql);
         
-        
     protected:
         MYSQL *con;
         
