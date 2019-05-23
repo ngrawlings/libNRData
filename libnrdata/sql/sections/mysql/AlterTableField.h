@@ -26,6 +26,8 @@ namespace nrcore {
             } ACTION;
         public:
             AlterTableField(String name, FieldDescriptor::TYPE type);
+            AlterTableField(const AlterTableField &atf);
+            AlterTableField(FieldDescriptor *fd);
             virtual ~AlterTableField();
             
             AlterTableField& add();

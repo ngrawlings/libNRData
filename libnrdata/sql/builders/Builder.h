@@ -21,6 +21,7 @@
 #include "../sections/sql/Order.h"
 #include "../sections/sql/OffsetLimit.h"
 #include "../sections/sql/FieldDescriptor.h"
+#include "../sections/sql/FieldDescriptor.h"
 
 namespace nrcore {
     

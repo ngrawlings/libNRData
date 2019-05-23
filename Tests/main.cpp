@@ -9,7 +9,7 @@
 #include <iostream>
 #include <libnrcore/exception/Exception.h>
 #include <libnrdata/connectors/MysqlConnector.h>
-#include "MysqlTestModel.h"
+#include "TestModel.h"
 
 
 using namespace nrcore;
@@ -18,7 +18,7 @@ int main(int argc, const char * argv[]) {
 
     try {
         MysqlConnector con("127.0.0.1", 3306, "root", "MovingOn", "test");
-        MysqlTestModel tm(&con);
+        TestModel tm(&con);
         
         if (!con.tableExists("test_table"))
             printf("table does not exist\n");

@@ -15,6 +15,16 @@ namespace nrcore {
             
         }
         
+        AlterTableField::AlterTableField(const AlterTableField &atf) : FieldDescriptor(atf) {
+            action = atf.action;
+            new_name = atf.new_name;
+            after_column = atf.after_column;
+        }
+        
+        AlterTableField::AlterTableField(FieldDescriptor *fd) : FieldDescriptor(*fd) {
+            
+        }
+        
         AlterTableField::~AlterTableField() {
             
         }

@@ -59,14 +59,14 @@ bool TestModel::migrate(int revision) {
     switch (revision) {
         case 1:
             {
-                FieldDescriptor f1("id", FieldDescriptor::INT);
-                f1.setUnsigned(true).setIndex(FieldDescriptor::PRIMARY).setAutoIncrement();
+                Ref<FieldDescriptor> f1 = b->getFieldDescriptor("id", "INT");
+                f1.getPtr()->setUnsigned(true).setIndex("PRIMARY").setAutoIncrement();
                 
-                FieldDescriptor f2("email", FieldDescriptor::VARCHAR);
-                f2.setParameter("64").notNull(true);
+                Ref<FieldDescriptor> f2 = b->getFieldDescriptor("email", "VARCHAR");
+                f2.getPtr()->setParameter("64").notNull(true);
                 
-                b->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f1)));
-                b->fieldDescriptor(Ref<FieldDescriptor>(new FieldDescriptor(f2)));
+                b->fieldDescriptor(f1);
+                b->fieldDescriptor(f2);
                 b->setEngine("InnoDB").setCharset("utf8mb4").setCollate("utf8mb4_0900_ai_ci");
                 
                 con->execute(b->sql(Builder::CREATE));
@@ -75,10 +75,12 @@ bool TestModel::migrate(int revision) {
         
         case 2:
             {
-                AlterTableField f1("description", FieldDescriptor::VARCHAR);
-                f1.add().afterColumn("email").setParameter("64").notNull(true);
+                Ref<FieldDescriptor> f1 =
+                Ref<FieldDescriptor>(new mysql::AlterTableField( ((mysql::FieldDescriptor*)b->getFieldDescriptor("description", "VARCHAR").getPtr()) ));
+                                                
+                ((mysql::AlterTableField*)f1.getPtr())->add().afterColumn("email").setParameter("64").notNull(true);
                 
-                b->fieldDescriptor(Ref<FieldDescriptor>(new AlterTableField(f1)));
+                b->fieldDescriptor(f1);
                 
                 con->execute(b->sql(Builder::ALTER));
             }
