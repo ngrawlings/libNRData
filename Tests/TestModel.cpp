@@ -76,7 +76,9 @@ bool TestModel::migrate(int revision) {
         case 2:
             {
                 Ref<FieldDescriptor> f1 =
-                Ref<FieldDescriptor>(new mysql::AlterTableField( ((mysql::FieldDescriptor*)b->getFieldDescriptor("description", "VARCHAR").getPtr()) ));
+                Ref<FieldDescriptor>(new mysql::AlterTableField(
+                        ((mysql::FieldDescriptor*)b->getFieldDescriptor("description", "VARCHAR").getPtr())
+                                    ));
                                                 
                 ((mysql::AlterTableField*)f1.getPtr())->add().afterColumn("email").setParameter("64").notNull(true);
                 
