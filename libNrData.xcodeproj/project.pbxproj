@@ -75,7 +75,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		97004E44228ADD5A00805A22 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		97004E44228ADD5A00805A22 /* UnitTests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = UnitTests; sourceTree = BUILT_PRODUCTS_DIR; };
 		97004E4E228AE20800805A22 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		97004E51228AEADA00805A22 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = ../../../../../usr/local/Cellar/openssl/1.0.2r/lib/libssl.a; sourceTree = "<group>"; };
 		97004E53228AEADA00805A22 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = ../../../../../usr/local/Cellar/openssl/1.0.2r/lib/libcrypto.a; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				97148799227A267E00570548 /* libnrdata.a */,
-				97004E44228ADD5A00805A22 /* Tests */,
+				97004E44228ADD5A00805A22 /* UnitTests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -358,9 +358,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		97004E43228ADD5A00805A22 /* Tests */ = {
+		97004E43228ADD5A00805A22 /* UnitTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97004E48228ADD5B00805A22 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildConfigurationList = 97004E48228ADD5B00805A22 /* Build configuration list for PBXNativeTarget "UnitTests" */;
 			buildPhases = (
 				97004E40228ADD5A00805A22 /* Sources */,
 				97004E41228ADD5A00805A22 /* Frameworks */,
@@ -370,9 +370,9 @@
 			);
 			dependencies = (
 			);
-			name = Tests;
+			name = UnitTests;
 			productName = Tests;
-			productReference = 97004E44228ADD5A00805A22 /* Tests */;
+			productReference = 97004E44228ADD5A00805A22 /* UnitTests */;
 			productType = "com.apple.product-type.tool";
 		};
 		97148798227A267E00570548 /* LibNrData */ = {
@@ -410,12 +410,13 @@
 					};
 				};
 			};
-			buildConfigurationList = 97148794227A267E00570548 /* Build configuration list for PBXProject "LibNrData" */;
+			buildConfigurationList = 97148794227A267E00570548 /* Build configuration list for PBXProject "libNrData" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 97148790227A267E00570548;
 			productRefGroup = 9714879A227A267E00570548 /* Products */;
@@ -423,7 +424,7 @@
 			projectRoot = "";
 			targets = (
 				97148798227A267E00570548 /* LibNrData */,
-				97004E43228ADD5A00805A22 /* Tests */,
+				97004E43228ADD5A00805A22 /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -669,7 +670,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97004E48228ADD5B00805A22 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+		97004E48228ADD5B00805A22 /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97004E49228ADD5B00805A22 /* Debug */,
@@ -678,7 +679,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97148794227A267E00570548 /* Build configuration list for PBXProject "LibNrData" */ = {
+		97148794227A267E00570548 /* Build configuration list for PBXProject "libNrData" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9714879B227A267E00570548 /* Debug */,
