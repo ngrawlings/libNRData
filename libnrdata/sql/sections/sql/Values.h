@@ -14,6 +14,8 @@
 #include <libnrcore/memory/Array.h>
 #include <libnrcore/memory/String.h>
 
+#define VALUE_HEX 0x01
+
 namespace nrcore {
     namespace sql {
  
@@ -23,7 +25,7 @@ namespace nrcore {
             Values(const Values& values);
             virtual ~Values();
             
-            void add(String field, String value);
+            void add(String field, String value, int flags=0);
             void clear();
             
             String toString();
@@ -35,9 +37,12 @@ namespace nrcore {
             typedef struct {
                 String field;
                 String value;
+                int flags;
             } VALUE;
             
             Array< Ref<VALUE> > values;
+            
+            String getValue(int index);
         };
     
     }

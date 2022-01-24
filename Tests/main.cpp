@@ -9,6 +9,7 @@
 #include <iostream>
 #include <libnrcore/exception/Exception.h>
 #include <libnrdata/connectors/MysqlConnector.h>
+#include <libnrdata/connectors/SqliteConnector.h>
 #include "TestModel.h"
 
 
@@ -17,7 +18,8 @@ using namespace nrcore;
 int main(int argc, const char * argv[]) {
 
     try {
-        MysqlConnector con("127.0.0.1", 3306, "root", "MovingOn", "test");
+        //MysqlConnector con("127.0.0.1", 3306, "root", "MovingOn", "test");
+        SqliteConnector con("./test.sqlite");
         TestModel tm(&con);
         
         if (!con.tableExists("test_table"))

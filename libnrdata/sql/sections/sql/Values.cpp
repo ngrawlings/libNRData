@@ -23,10 +23,11 @@ namespace nrcore {
             
         }
         
-        void Values::add(String field, String value) {
+        void Values::add(String field, String value, int flags) {
             VALUE *_value = new VALUE;
             _value->field = field;
             _value->value = value;
+            _value->flags = flags;
             values.push(Ref<VALUE>(_value));
         }
         
@@ -67,13 +68,22 @@ namespace nrcore {
             
             size_t len = values.length();
             if (len) {
-                ret = String("'%'").arg(values[0].getPtr()->value);
+                ret = getValue(0);
                 
                 for(int i=1; i<len; i++)
-                    ret += String(", '%'").arg(values[i].getPtr()->value);
+                    ret += String(", %").arg(getValue(i));
             }
             
             return ret;
+        }
+    
+        String Values::getValue(int index) {
+            Ref<VALUE> val = values[index];
+            if ((val.getPtr()->flags & VALUE_HEX) == VALUE_HEX) {
+                return String("x'%'").arg(val.getPtr()->value);
+            }
+            
+            return String("'%'").arg(val.getPtr()->value);
         }
     
     }

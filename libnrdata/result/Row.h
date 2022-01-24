@@ -26,11 +26,11 @@ namespace nrcore {
         String getString(int index);
         String getString(String name);
         
-        int getInteger(int index);
-        int getInteger(String name);
+        long long getInteger(int index);
+        long long getInteger(String name);
         
-        unsigned long getUnsignedInteger(int index);
-        unsigned long getUnsignedInteger(String name);
+        unsigned long long getUnsignedInteger(int index);
+        unsigned long long getUnsignedInteger(String name);
         
         double getDouble(int index);
         double getDouble(String name);

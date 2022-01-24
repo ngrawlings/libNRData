@@ -52,4 +52,8 @@ namespace nrcore {
         return ResultSet(this, 0, 0);
     }
 
+    unsigned int SqliteConnector::lastInsertId() {
+        return 0;
+    }
+
 }

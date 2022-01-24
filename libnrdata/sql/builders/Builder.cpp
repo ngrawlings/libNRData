@@ -96,8 +96,8 @@ namespace nrcore {
         return this;
     }
     
-    Builder* Builder::value(String name, String value) {
-        values.add(escape(name), escape(value));
+    Builder* Builder::value(String name, String value, int flags) {
+        values.add(escape(name), escape(value), flags);
         return this;
     }
     

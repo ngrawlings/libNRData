@@ -28,25 +28,29 @@ namespace nrcore {
     String SqliteBuilder::sql(TYPE type) {
         switch(type) {
             case SELECT:
-            return select();
+                return select();
             
             case INSERT:
-            return insert();
+                return insert();
             
             case UPDATE:
-            return update();
+                return update();
             
             case DELETE:
-            return _delete();
+                return _delete();
             
             case CREATE:
-            return create();
+                return create();
             
             case ALTER:
-            return alter();
+                return alter();
             
             case DROP:
-            return drop();
+                return drop();
+                
+            case TRUNCATE:
+                return truncate();
+
         }
         
         throw Exception(-1,  "Reached non executable point");
@@ -84,4 +88,8 @@ namespace nrcore {
         return "";
     }
     
+    String SqliteBuilder::truncate() {
+        return "";
+    }
+
 }

@@ -39,7 +39,7 @@ namespace nrcore {
             
             size_t len = orders.length();
             if (len) {
-                ret = String("`%` %").arg(orders[0].getPtr()->field).arg(orders[0].getPtr()->direction);
+                ret = String("`%` %").arg(orders[0].getPtr()->field).arg(orders[0].getPtr()->direction == 0 ? "ASC" : "DESC");
                 
                 for(int i=1; i<len; i++)
                     ret += String(", `%` %").arg(orders[i].getPtr()->field).arg(orders[i].getPtr()->direction);

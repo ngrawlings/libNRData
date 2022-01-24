@@ -36,7 +36,8 @@ namespace nrcore {
             DELETE,
             CREATE,
             ALTER,
-            DROP
+            DROP,
+            TRUNCATE
         } TYPE;
     public:
         Builder(String table);
@@ -57,7 +58,7 @@ namespace nrcore {
         Builder* rightJoin(String table, Ref<Clause> clause);
         Builder* outerJoin(String table, Ref<Clause> clause);
         
-        Builder* value(String name, String value);
+        Builder* value(String name, String value, int flags=0);
         
         Builder* setClause(Ref<Clause> clause);
         
@@ -65,7 +66,7 @@ namespace nrcore {
         Builder* group(String field);
         
         Builder* offset(long long offset);
-        Builder* limit(int offset);
+        Builder* limit(int limit);
         
         Builder* fieldDescriptor(Ref<FieldDescriptor> fd);
         

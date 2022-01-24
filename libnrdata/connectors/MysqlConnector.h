@@ -13,7 +13,7 @@
 #include "Connector.h"
 #include <libnrdata/sql/builders/MysqlBuilder.h>
 
-#include <mysql.h>
+#include <mysql/mysql.h>
 
 #include <libnrcore/memory/Ref.h>
 #include <libnrcore/memory/Array.h>
@@ -36,6 +36,8 @@ namespace nrcore {
         
         void execute(String sql);
         ResultSet query(String sql);
+        
+        unsigned int lastInsertId();
         
     protected:
         MYSQL *con;

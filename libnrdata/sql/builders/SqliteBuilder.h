@@ -32,6 +32,7 @@ namespace nrcore {
         String create();
         String alter();
         String drop();
+        String truncate();
         
     };
     

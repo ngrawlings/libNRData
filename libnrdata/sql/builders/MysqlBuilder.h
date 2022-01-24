@@ -10,7 +10,7 @@
 #define MysqlGenerator_hpp
 
 #include <stdio.h>
-#include <mysql.h>
+#include <mysql/mysql.h>
 
 #include "Builder.h"
 
@@ -28,14 +28,15 @@ namespace nrcore {
         Ref<FieldDescriptor> getFieldDescriptor(String name, String type);
         
     protected:
-        String select();
+        String _select();
         String insert();
         String update();
         String _delete();
         String create();
         String alter();
         String drop();
-        
+        String truncate();
+
     private:
         MYSQL *mysql;
     };

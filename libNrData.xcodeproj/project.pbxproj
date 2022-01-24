@@ -60,6 +60,7 @@
 		972B84922290A799004E8423 /* FieldDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 972B84902290A799004E8423 /* FieldDescriptor.cpp */; };
 		9733B44222942C1B0086FBCD /* FieldDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9733B44022942C1B0086FBCD /* FieldDescriptor.cpp */; };
 		9733B44322942C1B0086FBCD /* FieldDescriptor.h in Headers */ = {isa = PBXBuildFile; fileRef = 9733B44122942C1B0086FBCD /* FieldDescriptor.h */; };
+		977BB43A2369B1330090CE33 /* FieldDescriptor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 972B84902290A799004E8423 /* FieldDescriptor.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -399,7 +400,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
+				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = "Liquidsoft Studio";
 				TargetAttributes = {
 					97004E43228ADD5A00805A22 = {
@@ -466,6 +467,7 @@
 				97004E75228B27EF00805A22 /* AlterTableField.cpp in Sources */,
 				972B8470228F3729004E8423 /* Fields.cpp in Sources */,
 				971487DA227B7A5800570548 /* Join.cpp in Sources */,
+				977BB43A2369B1330090CE33 /* FieldDescriptor.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +477,7 @@
 		97004E49228ADD5B00805A22 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				HEADER_SEARCH_PATHS = (
@@ -496,6 +499,7 @@
 		97004E4A228ADD5B00805A22 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4MASABRRSM;
 				HEADER_SEARCH_PATHS = (
@@ -635,11 +639,11 @@
 					"$(SRCROOT)",
 					"\"$(SRCROOT)/../LibNrCore\"",
 					/usr/local/include,
-					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
+					"/usr/local/Cellar/mysql-client/8.0.25/include/",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",
+					"/usr/local/Cellar/mysql-client/8.0.25/lib",
 				);
 				PRODUCT_NAME = nrdata;
 				SKIP_INSTALL = YES;
@@ -656,11 +660,11 @@
 					"$(SRCROOT)",
 					"\"$(SRCROOT)/../LibNrCore\"",
 					/usr/local/include,
-					"/usr/local/Cellar/mysql-connector-c/6.1.11/include/",
+					"/usr/local/Cellar/mysql-client/8.0.25/include/",
 				);
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"/usr/local/Cellar/mysql-connector-c/6.1.11/lib",
+					"/usr/local/Cellar/mysql-client/8.0.25/lib",
 				);
 				PRODUCT_NAME = nrdata;
 				SKIP_INSTALL = YES;

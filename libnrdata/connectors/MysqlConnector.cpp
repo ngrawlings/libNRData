@@ -46,8 +46,9 @@ namespace nrcore {
     }
     
     void MysqlConnector::execute(String sql) {
-        if (mysql_query(con, sql))
+        if (mysql_query(con, sql)) {
             throw Exception(-1, mysql_error(con));
+        }
     }
     
     ResultSet MysqlConnector::query(String sql) {
@@ -79,10 +80,15 @@ namespace nrcore {
                 row.push(Memory(mysql_row[i], lengths[i]+1));
             
             res.addRow(row);
+            row.clear();
         }
         
         mysql_free_result(result);
         return res;
+    }
+
+    unsigned int MysqlConnector::lastInsertId() {
+        return mysql_insert_id(con);
     }
     
     bool MysqlConnector::tableExists(String table) {

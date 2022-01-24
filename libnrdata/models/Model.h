@@ -34,6 +34,7 @@ namespace nrcore {
         void runMigration();
         
         Builder* getBuilder();
+        int lastInsertId();
     };
     
 }

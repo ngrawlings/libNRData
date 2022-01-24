@@ -18,6 +18,7 @@ namespace nrcore {
     namespace sql {
     
         class ClauseGroup : public Clause {
+        public:
             ClauseGroup();
             ClauseGroup(const ClauseGroup &clause);
             virtual ~ClauseGroup();

@@ -33,6 +33,8 @@ namespace nrcore {
         
         void execute(String sql);
         ResultSet query(String sql);
+        
+        unsigned int lastInsertId();
 
     protected:
         sqlite3 *db;

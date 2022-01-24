@@ -38,12 +38,12 @@ namespace nrcore {
         return getString(index);
     }
     
-    int Row::getInteger(int index) {
+    long long Row::getInteger(int index) {
         String v = getString(index);
-        return atoi(v.operator char *());
+        return stoll(v.operator char *());
     }
     
-    int Row::getInteger(String name) {
+    long long Row::getInteger(String name) {
         int index = result_set->getColumnIndex(name);
         if (index == -1)
             throw Exception(-1, "Field not found");
@@ -51,11 +51,11 @@ namespace nrcore {
         return getInteger(index);
     }
     
-    unsigned long Row::getUnsignedInteger(int index) {
-        return std::stoul(getString(index).operator char *());
+    unsigned long long Row::getUnsignedInteger(int index) {
+        return std::stoull(getString(index).operator char *());
     }
     
-    unsigned long Row::getUnsignedInteger(String name) {
+    unsigned long long Row::getUnsignedInteger(String name) {
         int index = result_set->getColumnIndex(name);
         if (index == -1)
             throw Exception(-1, "Field not found");

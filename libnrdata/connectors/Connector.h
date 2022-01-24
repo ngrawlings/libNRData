@@ -35,6 +35,8 @@ namespace nrcore {
         virtual void execute(String sql) = 0;
         virtual ResultSet query(String sql) = 0;
         
+        virtual unsigned int lastInsertId() = 0;
+        
     protected:
         void *connection_instance;
         Ref<Schemas> _schemas;

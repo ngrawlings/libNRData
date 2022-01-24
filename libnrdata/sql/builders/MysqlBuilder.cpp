@@ -38,7 +38,7 @@ namespace nrcore {
     String MysqlBuilder::sql(TYPE type) {
         switch(type) {
             case SELECT:
-                return select();
+                return _select();
                 
             case INSERT:
                 return insert();
@@ -57,6 +57,10 @@ namespace nrcore {
                 
             case DROP:
                 return drop();
+                
+            case TRUNCATE:
+                return truncate();
+
         }
         
         throw Exception(-1,  "Reached non executable point");
@@ -66,7 +70,7 @@ namespace nrcore {
         return Ref<FieldDescriptor>(new mysql::FieldDescriptor(name, mysql::FieldDescriptor::getTypeByString(type)));
     }
     
-    String MysqlBuilder::select() {
+    String MysqlBuilder::_select() {
         String fields = this->fields.toString();
         String joins = this->getJoins();
         String where = this->clause.getPtr() ? this->clause.getPtr()->toString() : "";
@@ -90,7 +94,7 @@ namespace nrcore {
             sql += String(" GROUP BY %").arg(group);
         
         if (limit.length())
-            sql += String(" LIMIT %").arg(limit);
+            sql += String(" %").arg(limit);
         
         return sql;
     }
@@ -160,6 +164,10 @@ namespace nrcore {
     
     String MysqlBuilder::drop() {
         return String("DROP TABLE `%`;").arg(table);
+    }
+
+    String MysqlBuilder::truncate() {
+        return String("TRUNCATE TABLE `%`;").arg(table);
     }
     
 }
